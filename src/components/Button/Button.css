@@ -1,0 +1,31 @@
+
+.Button{
+    background-color: var(--primary);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    text-transform: capitalize;
+    letter-spacing: 20%;
+}
+
+.largeButton{
+    padding: 0.75rem 2.25rem;
+    font-weight: 500;
+}
+
+.navButton{
+    font-size: 0.875rem; /* 14px*/
+    line-height: 21px;
+    padding: 0.5rem 0.75rem;
+}
+
+.whiteButton{
+    color: #333333;
+    border: 1px solid #F1F1F1;
+}
+.longButton{
+    border-radius: 0.25rem;
+    font-size: 0.875rem; /* 14px*/
+}
