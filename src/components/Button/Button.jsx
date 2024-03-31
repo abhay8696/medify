@@ -2,10 +2,10 @@ import React from 'react';
 //styles
 import "./Button.css";
 
-const Button = ({text}) => {
+const Button = ({text, buttonClass}) => {
     return (
-        <button className='Button navButton'>
-            <span>{"login/signup"}</span>
+        <button className={`Button ${buttonClass}`}>
+            <span>{text}</span>
         </button>
     );
 };

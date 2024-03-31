@@ -9,7 +9,7 @@ function App() {
     <>
       <div className='App'>
         <h1>MEDIFY</h1>
-        <Button text="search" />
+        <Button text="1" buttonClass=" paginateButton"/>
       </div>
     </>
   )

@@ -8,6 +8,9 @@
     cursor: pointer;
     text-transform: capitalize;
     letter-spacing: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .largeButton{
@@ -21,9 +24,19 @@
     padding: 0.5rem 0.75rem;
 }
 
+.paginateButton{
+    padding: 0.55rem 1rem;
+    line-height: 20.78px;
+}
 .whiteButton{
     color: #333333;
     border: 1px solid #F1F1F1;
+    background-color: white;
+}
+.disablePaginateButton{
+    color: #F1F1F1;
+    border: 1px solid #F1F1F1;
+    background-color: white;
 }
 .longButton{
     border-radius: 0.25rem;
