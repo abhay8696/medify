@@ -1,6 +1,6 @@
 :root {
     /* Global variables to be defined here */
-    /* --color-white: #ffffff; */
+    --color-white: #ffffff;
     --primary: #2AA8FF;
     --dark: #102851;
     background: rgb(232,241,255);

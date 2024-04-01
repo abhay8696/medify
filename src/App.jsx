@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import './App.css'
+//components
 import Button from './components/Button/Button'
+import Navbar from './components/Navbar/Navbar'
+import AppTop from './components/AppTop/AppTop'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -8,8 +11,8 @@ function App() {
   return (
     <>
       <div className='App'>
-        <h1>MEDIFY</h1>
-        <Button text="1" buttonClass=" paginateButton"/>
+        <AppTop />  
+        <Navbar />
       </div>
     </>
   )

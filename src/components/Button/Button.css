@@ -13,6 +13,9 @@
     justify-content: space-between;
 }
 
+.buttonIcon{
+    max-width: 12px;
+}
 .largeButton{
     padding: 0.75rem 2.25rem;
     font-weight: 500;
@@ -24,6 +27,14 @@
     padding: 0.5rem 0.75rem;
 }
 
+.logoButton{
+    height: 23px;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .paginateButton{
     padding: 0.55rem 1rem;
     line-height: 20.78px;
@@ -42,3 +53,4 @@
     border-radius: 0.25rem;
     font-size: 0.875rem; /* 14px*/
 }
+
