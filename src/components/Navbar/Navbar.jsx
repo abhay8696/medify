@@ -16,6 +16,8 @@ const Navbar = props => {
         return navLinks.map(item => <span className='navLink'>{item}</span>)
     }
     return (
+
+        <>
         <nav>
             <div className='logo'>
                 <Button icon={sheildIcon} buttonClass="logoButton"/>
@@ -26,6 +28,10 @@ const Navbar = props => {
                 <Button text="my bookings" buttonClass="largeButton "/>
             </div>
         </nav>
+        <div className='navbarBottom'>
+            <span className='navbarBottomPatch'></span>
+        </div>
+        </>
     );
 };
 

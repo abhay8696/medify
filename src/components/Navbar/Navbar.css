@@ -60,3 +60,25 @@ nav{
 .navLink:hover{
     border-color: var(--primary);
 }
+
+.navbarBottom{
+    width: 100%;
+    height: 110px;
+    background: rgb(42,167,255);
+    background: linear-gradient(90deg, rgba(42,167,255,1) 100%, rgba(12,140,229,1) 100%);
+    border-radius: 0 0 1rem 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.navbarBottomPatch{
+    width: 62.1px;
+    height: 2rem;
+    position: absolute;
+    bottom: -0.5rem;
+    left: -1rem;
+    rotate: -30deg;
+    border-radius: 25px;
+    opacity: 0.5px;
+    background: rgb(129, 192, 236);
+}
