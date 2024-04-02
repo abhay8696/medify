@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 //styles
 import "./Navbar.css"
 //asstes
-import sheildIcon from "../../assets/sheild.svg";
+import sheildIcon from "../../assets/sheildWhite.svg";
 import menuIcon from "../../assets/hamburger.svg";
 //components
 import Button from '../Button/Button';
@@ -38,23 +38,27 @@ const Navbar = props => {
     return (
 
         <nav>
-        <div className='mainNav'>
-            <div className='logo'>
-                <Button icon={sheildIcon} buttonClass="logoButton"/>
-                <span className='logoText'>medify</span>
+            <div className='commonContainer'>
+            <div className='mainNav'>
+                <div className='logo'>
+                    <Button icon={sheildIcon} buttonClass="logoButton"/>
+                    <span className='logoText'>medify</span>
+                </div>
+                <div className='navMenuButton'>
+                    <Button clickFuntion={handleMenuClick} buttonClass='whiteButton' icon={menuIcon} />
+                </div>
+                <div className='navBody'>
+                    <div className='navLinksDiv'>{displayLinks()}</div>
+                    <Button text="my bookings" buttonClass="largeButton "/>
+                </div>
             </div>
-            <div className='navMenuButton'><Button clickFuntion={handleMenuClick} buttonClass='whiteButton' icon={menuIcon} /></div>
-            <div className='navBody'>
-                <div className='navLinksDiv'>{displayLinks()}</div>
-                <Button text="my bookings" buttonClass="largeButton "/>
+            {/* <div className='navbarBottom'>
+                <span className='navbarBottomPatch'></span>
+            </div> */}
+            <div className='menuListWrapper'>
+                {displayMenuList()}
             </div>
-        </div>
-        <div className='navbarBottom'>
-            <span className='navbarBottomPatch'></span>
-        </div>
-        <div className='menuListWrapper'>
-            {displayMenuList()}
-        </div>
+            </div>
         </nav>
     );
 };

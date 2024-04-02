@@ -5,7 +5,7 @@
     font-size: 0.875rem;
     color: var(--color-white);
     text-align: center;
-    height: 40px;
+    height: var(--heightOfAppTop);
     display: flex;
     align-items: center;
     justify-content: center;

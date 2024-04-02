@@ -5,6 +5,10 @@
     --dark: #102851;
     background: rgb(232,241,255);
     background: linear-gradient(90deg, rgba(232,241,255,1) 47%, rgba(231,240,255,1) 100%);
+
+
+    --heightOfAppTop: 40px;
+    --heightOfMainNav: 6rem;
   }
   
   *,

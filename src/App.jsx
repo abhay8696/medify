@@ -4,6 +4,7 @@ import './App.css'
 import Button from './components/Button/Button'
 import Navbar from './components/Navbar/Navbar'
 import AppTop from './components/AppTop/AppTop'
+import Hero from './components/Hero/Hero'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +14,7 @@ function App() {
       <div className='App'>
         <AppTop />  
         <Navbar />
+        <Hero />
       </div>
     </>
   )
