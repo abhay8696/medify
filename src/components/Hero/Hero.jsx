@@ -22,7 +22,7 @@ const Hero = () => {
                 </div>
                 <div className='heroImgDiv'>
                     <Button text="Regular Checkup" buttonClass="largeButton whiteButton heroImgButton" icon={blueSheildIcon} />
-                    <img src={heroImage} alt='doctors' />
+                    <img src={heroImage} alt='doctors' className='heroImage'/>
                 </div>
             </div>
         </div>
