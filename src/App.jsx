@@ -17,7 +17,7 @@ function App() {
         <AppTop />  
         <Navbar />
         <Hero />
-        <CardHolder type="offers"/>
+        <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>
         <Specialization />
         <CardHolder type="persons"/>
       </div>

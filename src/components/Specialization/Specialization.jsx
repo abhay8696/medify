@@ -13,7 +13,7 @@ import xrayImage from "../../assets/xray.svg";
 //components
 import Card from '../Card/Card';
 import Button from '../Button/Button';
-import CommonHeader from '../../../CommonHeader/CommonHeader';
+import CommonHeader from '../CommonHeader/CommonHeader';
 
 const Specialization = () => {
     //varaibles

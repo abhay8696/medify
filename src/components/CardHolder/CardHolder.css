@@ -22,44 +22,44 @@
 }
 
 
-/* screens below 1159px */
+/* screens below 1159px /////////////// */
 @media screen and (max-width: 1159px) {
-    .CardHolder{
+    .CardHolder-offers{
         margin-top: 8rem;
     }
 }
 
 /* screens below 976px */
 @media screen and (max-width: 976px) {
-    .CardHolder{
+    .CardHolder-offers{
         margin-top: 10rem;
     }
 }
 
 /* screens below 900px */
 @media screen and (max-width: 900px) {
-    .CardHolder{
+    .CardHolder-offers{
         margin-top: 15rem;
     }
 }
 
 /* screens below 644px */
 @media screen and (max-width: 644px) {
-    .CardHolder{
+    .CardHolder-offers{
         margin-top: 22rem;
     }
 }
 
 /* screens below 562px */
 @media screen and (max-width: 562px) {
-    .CardHolder{
+    .CardHolder-offers{
         margin-top: 22rem;
     }
 }
 
 /* screens below 396px */
 @media screen and (max-width: 396px) {
-    .CardHolder{
+    .CardHolder-offers{
         /* margin-top: 40rem; */
     }
 }

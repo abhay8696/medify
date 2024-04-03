@@ -62,3 +62,29 @@
     font-weight: 500;
     color: var(--primary);
 }
+
+@media screen and (max-width: 900px) {
+    .personImageDiv{
+        border-radius: 250px 250px 8px 8px;
+        width: 200px;
+        height: 212px;
+    }
+    .personName{
+        font-size: 18px;
+    }
+    
+    .personSpecialization{
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--primary);
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    /* .personImageDiv{
+        border-radius: 250px 250px 8px 8px;
+        width: 200px;
+        height: 212px;
+    } */
+}

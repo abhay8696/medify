@@ -5,12 +5,12 @@ import "./CardHolder.css"
 import OfferCard from '../OfferCard/OfferCard';
 import RadioButtons from '../RadioButtons/RadioButtons';
 import PersonCard from '../PersonCard/PersonCard';
-import { doctorsData } from '../../allVariables';
-import CommonHeader from '../../../CommonHeader/CommonHeader';
+import CommonHeader from '../CommonHeader/CommonHeader';
 //variables
+import { doctorsData } from '../../allVariables';
 
 
-const CardHolder = ({type}) => {
+const CardHolder = ({type, headlibe, classForMargin}) => {
     //functions
     const displayCards = () => {
         if(type === "offers"){
@@ -29,9 +29,10 @@ const CardHolder = ({type}) => {
         )
         }
     }
+    //CardHolder-offers
     return (
-        <div className='CardHolder'>
-            <CommonHeader text={"Our Medical Specialist"} />
+        <div className={`CardHolder ${classForMargin}`}>
+            {type === "persons" ? <CommonHeader text={"Our Medical Specialist"} /> : null}
             <div className='cardHolderWrapper commonContainer'>
                 {displayCards()}
             </div>
