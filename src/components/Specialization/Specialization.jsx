@@ -13,6 +13,7 @@ import xrayImage from "../../assets/xray.svg";
 //components
 import Card from '../Card/Card';
 import Button from '../Button/Button';
+import CommonHeader from '../../../CommonHeader/CommonHeader';
 
 const Specialization = () => {
     //varaibles
@@ -31,7 +32,7 @@ const Specialization = () => {
     return (
         <div className='Specialization'>
             <div className='commonContainer SpecializationBody'>
-                <h3 className='specializationHeader'>Find by specialisation</h3>
+                <CommonHeader text={"Find by specialisation"} />
                 <div className='specializationCardsBody'>
                     {displayCards()}
                 </div>

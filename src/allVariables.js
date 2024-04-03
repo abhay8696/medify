@@ -7,8 +7,8 @@ import person5 from "./assets/doctorImage5.png";
 
 export const doctorsData = [
     {name: "Dr. Lesley Hull", specialization: "Medicine", image: person1},
-    // {name: "Dr. Ahmad Khan", specialization: "Neurologist", image: person2},
-    // {name: "Dr. Heena Sachdeva", specialization: "Orthopadics", image: person3},
-    // {name: "Dr. Ankur Sharma", specialization: "Orthopadics", image: person4},
-    // {name: "Dr. Ahmad Stevens", specialization: "Neurologist", image: person5},
+    {name: "Dr. Ahmad Khan", specialization: "Neurologist", image: person2},
+    {name: "Dr. Heena Sachdeva", specialization: "Orthopadics", image: person3},
+    {name: "Dr. Ankur Sharma", specialization: "Orthopadics", image: person4},
+    {name: "Dr. Ahmad Stevens", specialization: "Neurologist", image: person5},
 ]
