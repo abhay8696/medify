@@ -8,6 +8,7 @@
     gap: 2rem;
     background-color: var(--color-white);
     /* margin-top: 5rem; */
+    padding: 2rem 0;
 }
 .cardHolderWrapper{
     display: flex;  

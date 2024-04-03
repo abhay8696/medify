@@ -8,7 +8,7 @@ const PersonCard = props => {
     return (
         <div className='PersonCard'>
             <div className='personImageDiv'>
-                <img src={image} alt='name'/>
+                <img src={image} alt='name' id={`doctorImg-${cardNo}`}/>
             </div>
             <div className='personName'>{name}</div>
             <div className='personSpecialization'>{specialization}</div>

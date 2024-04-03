@@ -23,8 +23,33 @@
 }
 
 .personImageDiv img{
-    width: 80%;
-    height: 95%;
+    /* width: 90%; */
+    /* height: 95%; */
+}
+
+#doctorImg-1{
+    height: 90%;
+    aspect-ratio: 0.9;
+}
+
+#doctorImg-2{
+    height: 90%;
+    aspect-ratio: 0.80;
+}
+
+#doctorImg-3{
+    height: 90%;
+    aspect-ratio: 0.80;
+}
+
+#doctorImg-4{
+    height: 90%;
+    aspect-ratio: 0.7;
+}
+
+#doctorImg-5{
+    height: 90%;
+    aspect-ratio: 0.85;
 }
 .personName{
     font-size: 24px;

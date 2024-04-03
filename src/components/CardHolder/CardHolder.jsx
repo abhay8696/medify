@@ -6,6 +6,7 @@ import OfferCard from '../OfferCard/OfferCard';
 import RadioButtons from '../RadioButtons/RadioButtons';
 import PersonCard from '../PersonCard/PersonCard';
 import { doctorsData } from '../../allVariables';
+import CommonHeader from '../../../CommonHeader/CommonHeader';
 //variables
 
 
@@ -23,13 +24,14 @@ const CardHolder = ({type}) => {
         }else{return (
             doctorsData.map((item, idx) => {
                 const {name, specialization, image} = item
-                return <PersonCard key={`${name}Image`} name={name} specialization={specialization} image={image} />
+                return <PersonCard cardNo={idx+1} key={`${name}Image`} name={name} specialization={specialization} image={image} />
             })
         )
         }
     }
     return (
         <div className='CardHolder'>
+            <CommonHeader text={"Our Medical Specialist"} />
             <div className='cardHolderWrapper commonContainer'>
                 {displayCards()}
             </div>
