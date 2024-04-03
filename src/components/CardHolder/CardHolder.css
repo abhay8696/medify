@@ -1,5 +1,5 @@
 
-.Offers{
+.CardHolder{
     min-height: 50vh;
     display: flex;
     flex-direction: column;
@@ -9,7 +9,7 @@
     background-color: var(--color-white);
     /* margin-top: 5rem; */
 }
-.offersWrapper{
+.cardHolderWrapper{
     display: flex;  
     align-items: center;
     justify-content: center;
@@ -23,50 +23,50 @@
 
 /* screens below 1159px */
 @media screen and (max-width: 1159px) {
-    .Offers{
+    .CardHolder{
         margin-top: 8rem;
     }
 }
 
 /* screens below 976px */
 @media screen and (max-width: 976px) {
-    .Offers{
+    .CardHolder{
         margin-top: 10rem;
     }
 }
 
 /* screens below 900px */
 @media screen and (max-width: 900px) {
-    .Offers{
+    .CardHolder{
         margin-top: 15rem;
     }
 }
 
 /* screens below 644px */
 @media screen and (max-width: 644px) {
-    .Offers{
-        margin-top: 18rem;
+    .CardHolder{
+        margin-top: 22rem;
     }
 }
 
 /* screens below 562px */
 @media screen and (max-width: 562px) {
-    .Offers{
-        margin-top: 28rem;
+    .CardHolder{
+        margin-top: 22rem;
     }
 }
 
 /* screens below 396px */
 @media screen and (max-width: 396px) {
-    .Offers{
-        margin-top: 40rem;
+    .CardHolder{
+        /* margin-top: 40rem; */
     }
 }
 
 
 /* screens below 365px */
 /* @media screen and (max-width: 365px) {
-    .Offers{
+    .CardHolder{
         margin-top: 30rem;
     }
 } */

@@ -5,7 +5,7 @@ import Button from './components/Button/Button'
 import Navbar from './components/Navbar/Navbar'
 import AppTop from './components/AppTop/AppTop'
 import Hero from './components/Hero/Hero'
-import Offers from './components/Offers/Offers'
+import CardHolder from './components/CardHolder/CardHolder'
 import Specialization from './components/Specialization/Specialization'
 
 function App() {
@@ -17,7 +17,7 @@ function App() {
         <AppTop />  
         <Navbar />
         <Hero />
-        <Offers />
+        <CardHolder type="offers"/>
         <Specialization />
       </div>
     </>
