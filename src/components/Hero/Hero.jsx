@@ -5,6 +5,7 @@ import "./Hero.css"
 import heroImage from "../../assets/heroImage.png";
 import blueSheildIcon from "../../assets/sheildBlue.svg";
 import Button from '../Button/Button';
+import SearchComp from '../SearchComp/SearchComp';
 
 const tagLine = "Skip the travel! Find Online";
 const subText = "Connect instantly with a 24x7 specialist or choose to video visit a particular doctor.";
@@ -24,6 +25,7 @@ const Hero = () => {
                     <Button text="Regular Checkup" buttonClass="largeButton whiteButton heroImgButton" icon={blueSheildIcon} />
                     <img src={heroImage} alt='doctors' className='heroImage'/>
                 </div>
+                <SearchComp />
             </div>
         </div>
     );

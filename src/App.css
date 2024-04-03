@@ -5,9 +5,11 @@
     font-family: "Poppins", sans-serif;;
 }
 
+
+/* COMMON STYLES */
 .commonContainer{
     width: 100vw;
-    max-width: 1170px;
+    max-width: var(--appWidth);
     height: 100%;
     /* margin: 0 1rem; */
     /* display: flex;
@@ -20,4 +22,9 @@
     .commonContainer{
         padding: 0 1rem;
     }
+}
+
+.inheritBackground{
+    background-color: inherit !important;
+
 }

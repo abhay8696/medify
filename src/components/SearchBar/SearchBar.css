@@ -1,0 +1,28 @@
+
+.SearchBar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputWrapper{
+    background-color: #F0F0F0;
+    outline: none;
+    border: none;
+    width: 326px;
+    border: 1px solid #ABB6C7;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.inputWrapper input{
+    outline: none;
+    border: none;
+    background-color: inherit;
+    font-size: 0.875rem;/* font-size: 14px; */
+    color: #ABB6C7;
+}

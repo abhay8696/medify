@@ -45,7 +45,7 @@ const Navbar = props => {
                     <span className='logoText'>medify</span>
                 </div>
                 <div className='navMenuButton'>
-                    <Button clickFuntion={handleMenuClick} buttonClass='whiteButton' icon={menuIcon} />
+                    <Button clickFuntion={handleMenuClick} buttonClass='whiteButton inheritBackground' icon={menuIcon} />
                 </div>
                 <div className='navBody'>
                     <div className='navLinksDiv'>{displayLinks()}</div>

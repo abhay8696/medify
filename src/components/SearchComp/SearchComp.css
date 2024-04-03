@@ -1,0 +1,12 @@
+
+.SearchComp{
+    background-color: red;
+    width: 100%;
+    max-width: var(--appWidth);
+    height: 429px;
+    position: absolute;
+    top: 53%;
+    border-radius: 1rem;
+    background-color: var(--color-white);
+    padding: 1.6875rem 1.5rem; /*27px 24px*/
+}
