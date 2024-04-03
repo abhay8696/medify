@@ -7,11 +7,11 @@
     justify-content: center;
     gap: 1rem;
     border-radius: 0.5rem;
-    background-color: var(--color-white);
     width: 203px;
     /* height: 153px; */
     aspect-ratio: 1.326;
     cursor: pointer;
+    background: #FAFBFE;
 }
 
 .Card:hover{
