@@ -2,10 +2,16 @@ import React from 'react';
 //styles
 import "./PersonCard.css";
 
-const PersonCard = () => {
+const PersonCard = props => {
+    //props
+    const { cardNo, image, name, specialization } = props;
     return (
         <div className='PersonCard'>
-            
+            <div className='personImageDiv'>
+                <img src={image} alt='name'/>
+            </div>
+            <div className='personName'>{name}</div>
+            <div className='personSpecialization'>{specialization}</div>
         </div>
     );
 };

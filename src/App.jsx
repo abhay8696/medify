@@ -19,6 +19,7 @@ function App() {
         <Hero />
         <CardHolder type="offers"/>
         <Specialization />
+        <CardHolder type="persons"/>
       </div>
     </>
   )

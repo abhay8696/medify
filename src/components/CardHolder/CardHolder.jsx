@@ -1,8 +1,13 @@
 import React from 'react';
 //styles
 import "./CardHolder.css"
+//components
 import OfferCard from '../OfferCard/OfferCard';
 import RadioButtons from '../RadioButtons/RadioButtons';
+import PersonCard from '../PersonCard/PersonCard';
+import { doctorsData } from '../../allVariables';
+//variables
+
 
 const CardHolder = ({type}) => {
     //functions
@@ -15,6 +20,12 @@ const CardHolder = ({type}) => {
                     <OfferCard cardNo={1}/>
                 </>
             )
+        }else{return (
+            doctorsData.map((item, idx) => {
+                const {name, specialization, image} = item
+                return <PersonCard key={`${name}Image`} name={name} specialization={specialization} image={image} />
+            })
+        )
         }
     }
     return (
