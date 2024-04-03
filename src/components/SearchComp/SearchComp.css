@@ -62,7 +62,7 @@
     }
 }
 
-/* screens below 900px */
+/* screens below 500px */
 @media screen and (max-width: 500px) {
     .SearchComp{
         top: 70%;
