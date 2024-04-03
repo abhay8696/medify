@@ -17,6 +17,11 @@
     justify-content: center; */
 }
 
+.paddingForSmallScreens{
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+}
+
 /* screen below 1200px */
 @media screen and (max-width: 1200px) {
     .commonContainer{

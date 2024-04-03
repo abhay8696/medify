@@ -2,9 +2,9 @@ import React from 'react';
 //styles
 import "./OfferCard.css"
 
-const OfferCard = () => {
+const OfferCard = ({cardNo}) => {
     return (
-        <div className='OfferCard'>
+        <div className={`OfferCard OfferCard-bg${cardNo}`}>
             
         </div>
     );

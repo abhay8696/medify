@@ -1,0 +1,16 @@
+
+.Offers{
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+}
+.offersWrapper{
+    display: flex;  
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 100vw;
+    /* background-color: rebeccapurple; */
+}
