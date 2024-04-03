@@ -1,12 +1,30 @@
 
 .SearchComp{
-    background-color: red;
-    width: 100%;
-    max-width: var(--appWidth);
-    height: 429px;
+    /* width: var(--appWidth); */
     position: absolute;
     top: 53%;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SearchCompBody{
+    padding: 1.6875rem 1.5rem; /*27px 24px*/
+    height: 429px;
     border-radius: 1rem;
     background-color: var(--color-white);
-    padding: 1.6875rem 1.5rem; /*27px 24px*/
+    box-shadow: 6px 6px 35px 0px #1028511C;
+}
+
+.SearchComp .SearchBar{
+    /* padding-left: 20%; */
+}
+
+@media screen and (max-width: 1200px) {
+    .SearchComp{
+        left: 1rem;
+        right: 1rem;
+    }
 }

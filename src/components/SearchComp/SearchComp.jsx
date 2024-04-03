@@ -6,7 +6,9 @@ import SearchBar from '../SearchBar/SearchBar';
 const SearchComp = () => {
     return (
         <div className='SearchComp'>
-            {/* <SearchBar /> */}
+            <div className='commonContainer SearchCompBody'>
+                <SearchBar />
+            </div>
         </div>
     );
 };

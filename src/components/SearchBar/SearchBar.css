@@ -2,14 +2,18 @@
 .SearchBar{
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .inputWrapper{
+    flex: 1;
     background-color: #F0F0F0;
     outline: none;
     border: none;
-    width: 326px;
+    /* max-width: 326px; */
     border: 1px solid #ABB6C7;
     padding: 0.5rem 1rem;
     display: flex;
