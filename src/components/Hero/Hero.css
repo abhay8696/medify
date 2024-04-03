@@ -113,6 +113,8 @@
         z-index: -1;
         right: 0%;
         bottom: 0%;
+        max-width: 100vw;
+        overflow: hidden;
     }
 }
 
@@ -134,7 +136,7 @@
         /* max-width: 500px; */
     }
     .heroImgDiv{
-        right: -10%;
+        right: -0%;
         bottom: 10%;
     }
 }

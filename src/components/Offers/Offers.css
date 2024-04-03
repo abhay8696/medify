@@ -56,10 +56,17 @@
     }
 }
 
+/* screens below 396px */
+@media screen and (max-width: 396px) {
+    .Offers{
+        margin-top: 40rem;
+    }
+}
+
 
 /* screens below 365px */
-@media screen and (max-width: 365px) {
+/* @media screen and (max-width: 365px) {
     .Offers{
         margin-top: 30rem;
     }
-}
+} */

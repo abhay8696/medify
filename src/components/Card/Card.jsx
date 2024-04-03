@@ -4,9 +4,9 @@ import "./Card.css";
 
 const Card = props => {
     //props
-    const { image, text, customStyle } = props;
+    const { image, text, customStyle, cardClass } = props;
     return (
-        <div className={`Card ${customStyle}`}> 
+        <div className={`Card ${customStyle} ${cardClass}`}> 
             <img src={image} className='cardImage'/>
             <span className='cardText'>{text}</span>
         </div>
