@@ -133,6 +133,10 @@
         font-size: 14px;
         /* max-width: 500px; */
     }
+    .heroImgDiv{
+        right: -10%;
+        bottom: 10%;
+    }
 }
 
 @media screen and (max-width: 500px) {
