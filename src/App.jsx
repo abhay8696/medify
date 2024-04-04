@@ -7,6 +7,7 @@ import AppTop from './components/AppTop/AppTop'
 import Hero from './components/Hero/Hero'
 import CardHolder from './components/CardHolder/CardHolder'
 import Specialization from './components/Specialization/Specialization'
+import PatientCaring from './components/PatientCaring/PatientCaring'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,6 +21,7 @@ function App() {
         <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>
         <Specialization />
         <CardHolder type="persons"/>
+        <PatientCaring />
       </div>
     </>
   )
