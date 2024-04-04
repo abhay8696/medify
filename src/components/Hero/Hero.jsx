@@ -6,6 +6,7 @@ import heroImage from "../../assets/heroImage.png";
 import blueSheildIcon from "../../assets/sheildBlue.svg";
 import Button from '../Button/Button';
 import SearchComp from '../SearchComp/SearchComp';
+import CommonSubText from '../CommonSubText/CommonSubText';
 
 const tagLine = "Skip the travel! Find Online";
 const subText = "Connect instantly with a 24x7 specialist or choose to video visit a particular doctor.";
@@ -19,6 +20,7 @@ const Hero = () => {
                         Medical <span>Centers</span>
                     </h1>
                     <p className='heroSubtext'>{subText}</p>
+                    {/* <CommonSubText text={subText} /> */}
                     <Button text="find centers" buttonClass="largeButton heroButton"/>
                 </div>
                 <div className='heroImgDiv'>

@@ -6,6 +6,7 @@ import detoxImage from "../../assets/detox.png";
 import person from "../../assets/author.jpeg";
 //components
 import CommonHeader from '../CommonHeader/CommonHeader';
+import CommonSuperText from '../CommonSuperText/CommonSuperText';
 
 const Blogs = () => {
 
@@ -31,7 +32,8 @@ const Blogs = () => {
     return (
         <div className='Blogs'>
             <div className='BlogsBody commonContainer'>
-                <span className='blogSuperText'>Blog & News</span>
+                <CommonSuperText text="blog & news" transform={"capitalize"}/>
+                <span className='blogSuperText'></span>
                 <CommonHeader text="Read Our Latest News" />
                 <div className='blogsArray'>
                     {displayBlogCard()}

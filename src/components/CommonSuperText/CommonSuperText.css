@@ -2,5 +2,4 @@
 .CommonSuperText{    
     color: var(--primary);
     font-weight: 600;
-    text-transform: capitalize;
 }
