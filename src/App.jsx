@@ -8,6 +8,7 @@ import Hero from './components/Hero/Hero'
 import CardHolder from './components/CardHolder/CardHolder'
 import Specialization from './components/Specialization/Specialization'
 import PatientCaring from './components/PatientCaring/PatientCaring'
+import Blogs from './components/Blogs/Blogs'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -15,13 +16,14 @@ function App() {
   return (
     <>
       <div className='App'>
-        <AppTop />  
+        {/* <AppTop />  
         <Navbar />
         <Hero />
         <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>
         <Specialization />
         <CardHolder type="persons"/>
-        <PatientCaring />
+        <PatientCaring /> */}
+        <Blogs />
       </div>
     </>
   )
