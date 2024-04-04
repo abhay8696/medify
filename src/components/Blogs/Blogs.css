@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1rem;
+    background-color: var(--color-white);
 }
 
 .BlogsBody{
@@ -34,8 +36,8 @@
     border: 1px solid #77829d27;
 }
 .detoxImage{
-    width: 363px;
-    height: 363px;
+    width: 100%;
+    aspect-ratio: 1;
     aspect-ratio: 1;
     border-radius: 10px 10px 0px 0px;
     background-image: url("../../assets/detox.png");
@@ -73,4 +75,61 @@
 .authorImage{
     max-width: 32px;
     border-radius: 50%;
+}
+
+@media screen and (max-width: 900px) and (min-width: 646px){
+    .Blogs{
+        margin-top: 250px;
+    }
+}
+
+@media screen and (max-width: 645px) and (min-width: 601px){
+    .Blogs{
+        margin-top: 150px;
+    }
+}
+
+@media screen and (max-width: 600.9px) {
+    .Blogs{
+        margin-top: 250px;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 951px){
+    .blogCard{
+        width: 300px;
+        height: 378px;
+    }
+}
+
+@media screen and (max-width: 950px) 
+/* and (min-width: 875px) */
+{
+    .Blogs{
+    }
+    .blogsArray{
+        max-height: 50vh;
+        overflow-y: auto;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        justify-content: center;
+        background: var(--gradientBackground);
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    .blogCard{
+        width: 275px;
+        height: 346px;
+    }
+}
+
+@media screen and (max-width: 874px){
+    /* .blogCard{
+        width: 200px;
+        height: 251px;
+        font-size: 0.8rem;
+    }
+    .blogTexts{
+        gap: 0.25rem;
+    } */
 }
