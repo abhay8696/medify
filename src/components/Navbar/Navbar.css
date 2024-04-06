@@ -113,6 +113,7 @@ nav{
     right: 100%;
     display: none;
     flex-direction: column;
+    z-index: 10
 }
 .menuItem{
     padding: 1rem;
