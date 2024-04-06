@@ -1,6 +1,8 @@
 
 .FAQ{
     /* padding: 2rem 0; */
+    background-color: var(--color-white);
+    padding: 3rem 0;
 }
 .FAQBody{
     margin-left: auto;
