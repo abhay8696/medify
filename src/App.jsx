@@ -18,7 +18,7 @@ function App() {
   return (
     <>
       <div className='App'>
-        {/* <AppTop />  
+        <AppTop />  
         <Navbar />
         <Hero />
         <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>
@@ -26,7 +26,7 @@ function App() {
         <CardHolder type="persons"/>
         <PatientCaring />
         <Blogs />
-        <Families /> */}
+        <Families />
         <FAQ />
       </div>
     </>
