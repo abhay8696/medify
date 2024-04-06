@@ -9,6 +9,7 @@ import CardHolder from './components/CardHolder/CardHolder'
 import Specialization from './components/Specialization/Specialization'
 import PatientCaring from './components/PatientCaring/PatientCaring'
 import Blogs from './components/Blogs/Blogs'
+import Families from './components/Families/Families'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -24,6 +25,7 @@ function App() {
         <CardHolder type="persons"/>
         <PatientCaring />
         <Blogs />
+        <Families />
       </div>
     </>
   )

@@ -1,11 +1,15 @@
 
 
 .CommonSubText{
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 400;
     color: #5C6169;
     line-height: 2rem;
     max-width: 570px;
+}
+
+.subTextForHero{
+    font-size: 20px;
 }
 
 /* screen below 1200px */
