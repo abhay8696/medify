@@ -20,7 +20,7 @@ function App() {
   return (
     <>
       <div className='App'>
-        {/* <AppTop />  
+        <AppTop />  
         <Navbar />
         <Hero />
         <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>
@@ -30,7 +30,7 @@ function App() {
         <Blogs />
         <Families />
         <FAQ />
-        <Download /> */}
+        <Download />
         <MainFooter />
       </div>
     </>
