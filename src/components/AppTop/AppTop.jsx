@@ -6,7 +6,7 @@ const text = " The health and well-being of our patients and their health care t
 const AppTop = () => {
     return (
         <div className='AppTop'>
-            {text}    
+            <marquee direction="left" className='appTopSlide'>{text}  </marquee>  
         </div>
     );
 };
