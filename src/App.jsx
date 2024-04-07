@@ -11,6 +11,7 @@ import PatientCaring from './components/PatientCaring/PatientCaring'
 import Blogs from './components/Blogs/Blogs'
 import Families from './components/Families/Families'
 import FAQ from './components/FAQ/FAQ'
+import Download from './components/Download/Download'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +29,7 @@ function App() {
         <Blogs />
         <Families />
         <FAQ />
+        <Download />
       </div>
     </>
   )

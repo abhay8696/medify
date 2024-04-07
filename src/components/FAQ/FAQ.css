@@ -95,3 +95,12 @@
         font-size: 18px;
     }
 }
+
+
+/* devices below 500px */
+@media screen and (max-width: 500px){
+    .FAQHeart{
+        top: 90%;
+        transform: translate(-100%, -50%);
+    }
+}
