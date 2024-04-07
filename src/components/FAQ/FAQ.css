@@ -60,18 +60,18 @@
     flex: 1;
 }
 .faqQuestion{
-    font-size: 18px;
     font-weight: 600;
     color: var(--dark);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 464px;
+    /* width: 464px; */
     height: 70px;
     flex: 1;
     margin-left: auto;
     margin-right: auto;
     line-height: 30px;
+    gap: 1rem;
 }
 
 
@@ -85,5 +85,13 @@
 @media screen and (max-width: 900px){
     .FAQLowerBody{
         flex-direction: column;
+    }
+}
+
+/* devices above 500px */
+@media screen and (min-width: 500px){
+    .faqQuestion{
+        width: 464px;
+        font-size: 18px;
     }
 }
