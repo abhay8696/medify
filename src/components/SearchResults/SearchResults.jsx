@@ -13,17 +13,18 @@ const SearchResults = () => {
     return (
         <div className='SearchResults'>
             <div className='commonContainer resultsBody'>
-                <div className='resultsLeftSide'>
-                    <div className='resultsHead'>
-                        <h5>{headline}</h5>
-                        <p>
-                            <img src={checkIcon} alt='check icon' className='checkIcon'/>
-                            <span>{subText}</span>
-                        </p>
-                    </div>
-                    <div className='resultCardsArray'>
+                <div className='resultsHead'>
+                    <h5>{headline}</h5>
+                    <p>
+                        <img src={checkIcon} alt='check icon' className='checkIcon'/>
+                        <span>{subText}</span>
+                    </p>
+                </div>
+                <div className='cardAndSensodyne'>
+                    <aside className='resultCardsArray'>
                         <ResultCard />
-                    </div>
+                    </aside>
+                    <aside className='sensodyne'></aside>
                 </div>
             </div>
         </div>
