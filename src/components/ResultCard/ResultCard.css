@@ -1,6 +1,11 @@
 
-.ResultCard{
+.ResultCardWrapper{
     background-color: var(--color-white);
+    max-width: 95vw;
+    border-radius: 1rem;
+}
+
+.ResultCard{
     padding: 32px 24px;
     border-radius: 1rem;
     display: flex;
@@ -120,6 +125,9 @@
 }
 
 @media screen and (max-width: 600px){
+    .ResultCardWrapper{
+        border-radius: 0.75rem;
+    }
     .ResultCard{
         padding: 24px 20px;
         border-radius: 0.75rem;

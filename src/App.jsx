@@ -16,24 +16,24 @@ import MainFooter from './components/MainFooter/MainFooter'
 import SearchResults from './components/SearchResults/SearchResults'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [bookings, setBookings] = useState({})
 
   return (
     <>
       <div className='App'>
-        {/* <AppTop />  
+        <AppTop />  
         <Navbar />
-        <Hero />
+        {/* <Hero />
         <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>
         <Specialization />
         <CardHolder type="persons"/>
         <PatientCaring />
         <Blogs />
-        <Families />
+        <Families /> */}
+        <SearchResults bookings={bookings}/>
         <FAQ />
         <Download />
-        <MainFooter /> */}
-        <SearchResults />
+        <MainFooter />
       </div>
     </>
   )
