@@ -13,6 +13,7 @@ import Families from './components/Families/Families'
 import FAQ from './components/FAQ/FAQ'
 import Download from './components/Download/Download'
 import MainFooter from './components/MainFooter/MainFooter'
+import SearchResults from './components/SearchResults/SearchResults'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -20,7 +21,7 @@ function App() {
   return (
     <>
       <div className='App'>
-        <AppTop />  
+        {/* <AppTop />  
         <Navbar />
         <Hero />
         <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>
@@ -31,7 +32,8 @@ function App() {
         <Families />
         <FAQ />
         <Download />
-        <MainFooter />
+        <MainFooter /> */}
+        <SearchResults />
       </div>
     </>
   )
