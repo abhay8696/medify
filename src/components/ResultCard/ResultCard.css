@@ -1,0 +1,79 @@
+
+.ResultCard{
+    background-color: var(--color-white);
+    padding: 32px 24px;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 785px;
+    height: 268px;
+    gap: 1rem;
+}
+
+.resultCardImageWrapper{
+    flex: 0 0 124px;
+    height: 100%;
+}
+
+.resultCardTexts{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.resultCardTitle{
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--primary);
+    text-transform: capitalize;
+}
+/*  */
+
+.resultLocation, .resultCardOfferLine{
+    display: flex;
+    align-items: flex-start;
+    /* gap: 0.25rem; */
+}
+.resultLocation{
+    flex-direction: column;
+}
+.resultCardOfferLine{
+    gap: 0.25rem;
+}
+.resultLocation, .resultCardOfferLine{
+    font-size: 14px;
+    color: #414146;
+}
+.resultCity{
+    font-weight: 700;
+}
+.resultCardSubtext{
+    font-weight: 400;
+}
+
+.FREE{
+    color: var(--color-green);
+    font-weight: 700;
+}
+
+.strikeThrough{
+    text-decoration: line-through;
+    color: #787887;
+}
+
+.resultCardButton{
+    font-size: 14px;
+    font-size: 500;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.available{
+    color: var(--color-green);
+}

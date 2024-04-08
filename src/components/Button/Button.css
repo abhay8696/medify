@@ -45,6 +45,12 @@
     border: 1px solid #F1F1F1;
     background-color: white;
 }
+
+
+.greenButton{
+    color: var(--color-white);
+    background-color: var(--color-green);
+}
 .disablePaginateButton{
     color: #F1F1F1;
     border: 1px solid #F1F1F1;
@@ -59,4 +65,16 @@
 
 .buttonIcon{
     max-width: 40px;
+}
+
+.smallButton{
+    padding: 0.125rem 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smallButton img{
+    max-width: 16px;
 }
