@@ -79,8 +79,14 @@
     max-width: 16px;
 }
 
-.transperantBlueButton{
+.blueButton-outline{
     border: 1px solid var(--primary);
     color: var(--primary);
     background-color: inherit;
+}
+
+.blueButton-filled{
+    color: var(--color-white);
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
 }

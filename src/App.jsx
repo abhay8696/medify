@@ -21,8 +21,8 @@ function App() {
   return (
     <>
       <div className='App'>
-        <AppTop />  
-        <Navbar />
+        {/* <AppTop />  
+        <Navbar /> */}
         {/* <Hero />
         <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>
         <Specialization />
@@ -31,9 +31,9 @@ function App() {
         <Blogs />
         <Families /> */}
         <SearchResults bookings={bookings}/>
-        <FAQ />
+        {/* <FAQ />
         <Download />
-        <MainFooter />
+        <MainFooter /> */}
       </div>
     </>
   )

@@ -13,7 +13,7 @@ const SlotSession = props => {
   //functions
   const displayButtons = () => {
     return timings.map(item => {
-      return <Button text={item} buttonClass={"smallButton transperantBlueButton"}/>
+      return <Button text={`${item} ${suffix}`} buttonClass={"smallButton blueButton-outline"}/>
     })
   }
   return (
@@ -35,11 +35,14 @@ const TabPanel = props => {
         id={`full-width-tabpanel-${index}`}
         aria-labelledby={`full-width-tab-${index}`}
         {...other}
+        className='TabPanel'
       >
         {value === index && (
           <>
             <SlotSession type="Morining" timings = {morningTimings} suffix="AM"/>
+            <span className='slotDivider'></span>
             <SlotSession type="Afternoon" timings = {afternoonTimings} suffix="PM"/>
+            <span className='slotDivider'></span>
             <SlotSession type="Evening" timings = {eveningTimings} suffix="PM"/>
           </>
         )}
