@@ -1,0 +1,65 @@
+
+
+.MUI-Tabs{
+    max-width: 785px !important;
+}
+.slotTabName{
+    width: 33.33% ; 
+}
+
+.tablLabel{
+    display: flex;
+    flex-direction: column;
+}
+
+.labelHead{
+    font-weight: 400;
+}
+
+.labelText{
+    font-size: 12px;
+    color: var(--color-green);
+}
+
+.TabPanelWrapper{
+    overflow: hidden;
+}
+
+.TabPanel{
+}
+
+.slideRight{
+    animation: leftToRight 500ms forwards;
+}
+.slideLeft{
+    animation: rightToLeft 500ms forwards;
+}
+
+
+@media screen and (max-width: 600px){
+    .labelHead{
+        font-size: 14px;
+    }
+    
+    .labelText{
+        font-size: 10px;
+    }
+}
+
+@keyframes leftToRight {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+
+@keyframes rightToLeft {
+    from{
+        transform: translateX(100%);
+    }
+    to{
+        transform: translateX(0);
+    }
+}

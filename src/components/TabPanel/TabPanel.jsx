@@ -26,7 +26,7 @@ const SlotSession = props => {
 
 const TabPanel = props => {
     //props
-    const { children, value, index, ...other } = props;
+    const { children, value, index, customClass, ...other } = props;
   
     return (
       <div
@@ -35,7 +35,7 @@ const TabPanel = props => {
         id={`full-width-tabpanel-${index}`}
         aria-labelledby={`full-width-tab-${index}`}
         {...other}
-        className='TabPanel'
+        className={`TabPanel ${customClass}`}
       >
         {value === index && (
           <>

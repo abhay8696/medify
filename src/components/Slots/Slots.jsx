@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Tabs, { tabsClasses } from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
@@ -6,16 +6,35 @@ import Tab from '@mui/material/Tab';
 import "./Slots.css";
 //components
 import TabPanel from '../TabPanel/TabPanel';
+//helper functions
+import { printFormattedDates } from '../../functions/functions';
 
 
 
 const Slots = () => {
-    const [value, setValue] = React.useState(0);
+    //states
+    const [value, setValue] = useState(0);
+    const [slideDirection, setSlidDirection] = useState("slideLeft")
+    //refs
+    const dateArray = useRef(printFormattedDates());
 
+    //functions
     const handleChange = (event, newValue) => {
+        if(newValue > value){
+            setSlidDirection("slideLeft")
+        }else setSlidDirection("slideRight")
         setValue(newValue);
     };
 
+    const displayLabel = date => {
+        return (
+            <div className='tablLabel'>
+                <span className='labelHead'>{date || "Loading..."}</span>
+                <span className='labelText'>15 slots available</span>
+            </div>
+        )
+    }
+    
     return (
         <>
         <Tabs
@@ -29,37 +48,25 @@ const Slots = () => {
                 '&.Mui-disabled': { opacity: 0.3 },
             },
             }}
+            className='MUI-Tabs'
         >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
-            <Tab label="Item Four" />
-            <Tab label="Item Five" />
-            <Tab label="Item Six" />
-            <Tab label="Item Seven" />npm install --save react-swipeable-views
+            <Tab label={displayLabel("Today")}  className='slotTabName' />
+            <Tab label={displayLabel("Tomorrow")}  className='slotTabName' />
+            <Tab label={displayLabel(dateArray?.current?.[2])}  className='slotTabName' />
+            <Tab label={displayLabel(dateArray?.current?.[3])}  className='slotTabName' />
+            <Tab label={displayLabel(dateArray?.current?.[4])}  className='slotTabName' />
+            <Tab label={displayLabel(dateArray?.current?.[5])}  className='slotTabName' />
+            <Tab label={displayLabel(dateArray?.current?.[6])}  className='slotTabName' />
+            
         </Tabs>
-        <div>
-            <TabPanel value={value} index={0} >
-            Item One
-            </TabPanel>
-            <TabPanel value={value} index={1} >
-            Item Two
-            </TabPanel>
-            <TabPanel value={value} index={2} >
-            Item Three
-            </TabPanel>
-            <TabPanel value={value} index={3} >
-            Item Four
-            </TabPanel>
-            <TabPanel value={value} index={4} >
-            Item Five
-            </TabPanel>
-            <TabPanel value={value} index={5} >
-            Item Six
-            </TabPanel>
-            <TabPanel value={value} index={6} >
-            Item Seven
-            </TabPanel>
+        <div className='TabPanelWrapper'>
+            <TabPanel value={value} index={0} customClass={slideDirection} />
+            <TabPanel value={value} index={1} customClass={slideDirection} />
+            <TabPanel value={value} index={2} customClass={slideDirection} />
+            <TabPanel value={value} index={3} customClass={slideDirection} />
+            <TabPanel value={value} index={4} customClass={slideDirection} />
+            <TabPanel value={value} index={5} customClass={slideDirection} />
+            <TabPanel value={value} index={6} customClass={slideDirection} />
         </div>
         </>
     );
