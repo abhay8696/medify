@@ -1,20 +1,12 @@
 import { useState } from 'react'
-import './App.css'
+import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 //components
-import Button from './components/Button/Button'
-import Navbar from './components/Navbar/Navbar'
-import AppTop from './components/AppTop/AppTop'
-import Hero from './components/Hero/Hero'
-import CardHolder from './components/CardHolder/CardHolder'
-import Specialization from './components/Specialization/Specialization'
-import PatientCaring from './components/PatientCaring/PatientCaring'
-import Blogs from './components/Blogs/Blogs'
-import Families from './components/Families/Families'
-import FAQ from './components/FAQ/FAQ'
 import Download from './components/Download/Download'
 import MainFooter from './components/MainFooter/MainFooter'
-import SearchResults from './components/SearchResults/SearchResults'
-import Bookings from './components/Bookings/Bookings'
+import HomePage from './components/HomePage/HomePage'
+import FindPage from './components/FindPage/FindPage'
+import BookingsPage from './components/BookingsPage/BookingsPage'
 
 function App() {
   const [bookings, setBookings] = useState({})
@@ -22,26 +14,16 @@ function App() {
   return (
     <>
       <div className='App'>
-        {/* navbar */}
-        <AppTop />  
-        <Navbar />
+        
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' exact element={<HomePage />} />
+            <Route path='/home' exact element={<HomePage />} />
+            <Route path='/find' exact element={<FindPage bookings={bookings}/>} />
+            <Route path='/bookings' exact element={ <BookingsPage />} />
+          </Routes>
+        </BrowserRouter>
 
-        {/* home */}
-        <Hero />
-        <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>
-        <Specialization />
-        <CardHolder type="persons"/>
-        <PatientCaring />
-        <Blogs />
-        <Families />
-
-        {/* find */}
-        <SearchResults bookings={bookings}/>
-
-        {/* bookings */}
-        <Bookings />
-        {/* footer */}
-        <FAQ />
         <Download />
         <MainFooter />
       </div>
