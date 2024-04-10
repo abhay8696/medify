@@ -13,7 +13,12 @@ import { BookingsContext, FoundHospitalsContext } from './contexts/AllContexts';
 
 function App() {
   const [bookings, setBookings] = useState({});
-  const [foundHospitals, setFoundHospitals] = useState([]);
+  const [foundHospitals, setFoundHospitals] = useState({
+    hospitals: [],
+    cityName: "",
+    stateName: "",
+    noSearchYet: true
+  });
   return (
     <>
       <div className='App'>

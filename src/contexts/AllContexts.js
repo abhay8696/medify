@@ -1,8 +1,4 @@
 import React from 'react';
 
 export const BookingsContext = React.createContext();
-export const FoundHospitalsContext = React.createContext({
-    hospitals: [],
-    cityName: "",
-    stateName: ""
-});
+export const FoundHospitalsContext = React.createContext();

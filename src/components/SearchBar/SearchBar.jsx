@@ -18,7 +18,7 @@ const allSates = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado
 
 const SearchBar = props => {
     //const
-    const { customClass, atBookingsPage } = props;
+    const { customClass, atBookingsPage, atHomePage } = props;
     //contexts
     const [foundHospitals, setFoundHospitals] = useContext(FoundHospitalsContext)
     //states
@@ -45,6 +45,7 @@ const SearchBar = props => {
         event.preventDefault();
         
         getLocationData("hospitals")
+        
     }
 
     const getLocationData = async (dataType, location) => {

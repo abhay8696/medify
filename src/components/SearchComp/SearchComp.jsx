@@ -10,6 +10,7 @@ import ambulance from "../../assets/ambulance.svg";
 //components
 import SearchBar from '../SearchBar/SearchBar';
 import Card from '../Card/Card';
+import { Link } from 'react-router-dom';
 
 const SearchComp = () => {
     //variables
@@ -28,7 +29,9 @@ const SearchComp = () => {
     return (
         <div className='SearchComp'>
             <div className='commonContainer SearchCompBody'>
-                <SearchBar />
+                <Link to="/find">
+                    <SearchBar atHomePage={true}/>
+                </Link>
                 <div className='cardsDivWrapper'>
                     <p>You may be looking for</p>
                     <div className='cardsDiv'>

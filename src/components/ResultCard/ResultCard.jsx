@@ -16,7 +16,9 @@ const resultCardSubtext = "Smilessence Center for Advanced Dentistry + 1";
 const resultCardOffer = "Consultation fee at clinic";
 
 
-const ResultCard = () => {
+const ResultCard = props => {
+    //props
+    const { hospitalName, county, city, rating, hospitalType } = props;
     //contexts
     const [bookings, setBookings] = useContext(BookingsContext)
     //states
@@ -38,10 +40,10 @@ const ResultCard = () => {
                 </div>
                 <div className='resultCardContent'>
                     <div className='resultContent-left'>
-                        <h6 className='resultCardTitle'>{resultCardHead}</h6>
+                        <h6 className='resultCardTitle'>{hospitalName}</h6>
                         <div className='resultLocation'>
-                            <span className='resultCity'>{resultLocation}</span>
-                            <span className='resultCardSubtext'>{resultCardSubtext}</span>
+                            <span className='resultCity'>{`${county}, ${city}`}</span>
+                            <span className='resultCardSubtext'>{hospitalType}</span>
                             <span className='resultCardSubtext'>more</span>
                         </div>
                         <div className='resultCardOfferLine'>
@@ -49,7 +51,7 @@ const ResultCard = () => {
                             <span className='strikeThrough'>₹500</span>
                             <span>{resultCardOffer}</span>
                         </div>
-                        <Button buttonClass={"smallButton greenButton"} text={5} icon={likeIcon} />
+                        <Button buttonClass={"smallButton greenButton"} text={rating} icon={likeIcon} />
                     </div>
                     <div className='resultContent-right'>
                         <span className='available'>Available Today</span>
