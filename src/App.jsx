@@ -7,6 +7,9 @@ import MainFooter from './components/MainFooter/MainFooter'
 import HomePage from './components/HomePage/HomePage'
 import FindPage from './components/FindPage/FindPage'
 import BookingsPage from './components/BookingsPage/BookingsPage'
+import { BookingsContext } from './contexts/AllContexts';
+//contexts
+
 
 function App() {
   const [bookings, setBookings] = useState({})
@@ -14,16 +17,16 @@ function App() {
   return (
     <>
       <div className='App'>
-        
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' exact element={<HomePage />} />
-            <Route path='/home' exact element={<HomePage />} />
-            <Route path='/find' exact element={<FindPage bookings={bookings}/>} />
-            <Route path='/bookings' exact element={ <BookingsPage />} />
-          </Routes>
-        </BrowserRouter>
-
+        <BookingsContext.Provider value={[bookings, setBookings]}>
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' exact element={<HomePage />} />
+              <Route path='/home' exact element={<HomePage />} />
+              <Route path='/find' exact element={<FindPage bookings={bookings}/>} />
+              <Route path='/bookings' exact element={ <BookingsPage />} />
+            </Routes>
+          </BrowserRouter>
+        </BookingsContext.Provider>
         <Download />
         <MainFooter />
       </div>
