@@ -7,6 +7,7 @@ import menuIcon from "../../assets/hamburger.svg";
 //components
 import Button from '../Button/Button';
 import SearchBar from '../SearchBar/SearchBar';
+import { Link } from 'react-router-dom';
 
 const Navbar = props => {
     //props
@@ -17,7 +18,15 @@ const Navbar = props => {
     const navLinks = ["Find Doctors", "Hospitals", "Medicines", "Surgeries", "Software for Provider", "Facilities"];
     //functions
     const displayLinks = () => {
-        return navLinks.map(item => <span className='navLink'><span className='navLink-inner'>{item}</span></span>)
+        return navLinks.map(item => {
+            let goto = "#"
+            if(item == "Find Doctors") goto = "/find"
+            return (
+                <Link to={goto}>
+                    <span className='navLink'><span className='navLink-inner'>{item}</span></span>
+                </Link>
+            )
+        })
     }
     const handleMenuClick = () => {
         if(menuPoisition === "menuLeft" || menuPoisition === "hideMenu") setMenuPosition("menuRight");
@@ -28,10 +37,16 @@ const Navbar = props => {
         // ...navLinks, 
         navLinks.forEach((item, index) => {
             transitionDelay = {transitionDelay: `${delay++}00ms`} 
-            return arr.push(<span style={transitionDelay} className={`menuItem ${menuPoisition}`}>{item}</span>)
+            let goto = "#";
+            if(item == "Find Doctors") goto = "/find";
+            return arr.push(
+                <Link onClick={handleMenuClick} to={goto} style={transitionDelay} className={`menuItem ${menuPoisition}`}>
+                    {item}
+                </Link>
+            )
         });
 
-        arr.push(<span style={transitionDelay} className={`menuItem ${menuPoisition} menuItem-forBookings`}><Button text="my bookings" buttonClass="largeButton "/></span>);
+        arr.push(<Link to="/bookings" style={transitionDelay} className={`menuItem ${menuPoisition} menuItem-forBookings`}><Button text="my bookings" buttonClass="largeButton "/></Link>);
 
         return arr;
     } 
@@ -72,16 +87,20 @@ const Navbar = props => {
         <nav className={`${backColor}`}>
             <div className="commonContainer">
             <div className='mainNav'>
-                <div className='logo'>
-                    <Button icon={sheildIcon} buttonClass="logoButton"/>
-                    <span className='logoText'>medify</span>
-                </div>
+                <Link to="/">
+                    <div className='logo'>
+                        <Button icon={sheildIcon} buttonClass="logoButton"/>
+                        <span className='logoText'>medify</span>
+                    </div>
+                </Link>
                 <div className='navMenuButton'>
                     <Button clickFuntion={handleMenuClick} buttonClass='whiteButton inheritBackground' icon={menuIcon} />
                 </div>
                 <div className='navBody'>
                     <div className='navLinksDiv'>{displayLinks()}</div>
-                    <Button text="my bookings" buttonClass="largeButton "/>
+                    <Link to="/bookings">
+                        <Button text="my bookings" buttonClass="largeButton "/>
+                    </Link>
                 </div>
             </div>
             
