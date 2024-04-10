@@ -25,3 +25,33 @@ export const printFormattedDates = () => {
     return (formattedDates);
   }
   
+
+export const findSubString = (mainStr, subStr) => {
+  if(!mainStr || !subStr) return null;
+  if(!mainStr.length) return null;
+  if(!subStr.length) return null;
+
+  if(subStr.length > mainStr.length) return null;
+
+  let p=0;
+
+  while(p < subStr.length){
+    if(mainStr[p].toLowerCase() != subStr[p].toLowerCase()) return null;
+    p++;
+  }
+
+  return mainStr;
+  // "abcd" "bc"
+}
+
+
+export const findLocations = (locationArray, str) => {
+  // if(!locationArray ||str?.length) return []
+  let arr = [];
+
+  locationArray.forEach(item => {
+      if(findSubString(item, str)) arr.push(item)
+  })
+
+  return arr;
+}
