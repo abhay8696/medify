@@ -55,7 +55,7 @@ const SearchBar = props => {
         }
         if(dataType === "hospitals"){
             const hospitals = await axios.get(`${api}/data?state=${stateName}&city=${cityName}`);
-            setFoundHospitals(hospitals.data)
+            setFoundHospitals({hospitals: hospitals.data, cityName, stateName})
         }
     }
     const handleChange = event => {

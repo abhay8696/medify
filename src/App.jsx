@@ -14,7 +14,6 @@ import { BookingsContext, FoundHospitalsContext } from './contexts/AllContexts';
 function App() {
   const [bookings, setBookings] = useState({});
   const [foundHospitals, setFoundHospitals] = useState([]);
-
   return (
     <>
       <div className='App'>

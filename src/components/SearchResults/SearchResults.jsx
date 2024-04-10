@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 //styles
 import "./SearchResults.css";
 //assets
@@ -6,11 +6,15 @@ import checkIcon from "../../assets/checkBadge.svg"
 //components
 import CommonSubText from "../CommonSubText/CommonSubText";
 import ResultCard from '../ResultCard/ResultCard';
+//contexts
+import { FoundHospitalsContext } from '../../contexts/AllContexts';
 
 const headline = "15 medical centers available in Alaska";
 const subText = "Book appointments with minimum wait-time & verified doctor details";
 const SearchResults = () => {
     
+    //context
+    const [foundHospitals, setFoundHospitals] = useContext(FoundHospitalsContext);
     return (
         <div className='SearchResults'>
             <div className='commonContainer resultsBody'>
