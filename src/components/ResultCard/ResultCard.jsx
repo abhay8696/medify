@@ -18,19 +18,51 @@ const resultCardOffer = "Consultation fee at clinic";
 
 const ResultCard = props => {
     //props
-    const { hospitalName, county, city, rating, hospitalType } = props;
+    const { hospitalName, county, city, rating, hospitalType, atBookingsPage, bookedDate, bookedTime } = props;
     //contexts
     const [bookings, setBookings] = useContext(BookingsContext)
     //states
-    const [dateTime, setDateTime] = useState(undefined);
+    const [dateTime, setDateTime] = useState({date: "", time: ""});
     const [slotsON, setSlotsON] = useState(false);
     //functions
-    const handleCardClick = () => setSlotsON(!slotsON);
+    const handleCardClick = () => {
+        if(atBookingsPage) return;
+        setSlotsON(!slotsON)
+    };
     const handleButton = () => {
+        if(atBookingsPage) return;
+
         if(!slotsON) return setSlotsON(true);
+
+        if(!dateTime.date.length || !dateTime.time.length){
+            return alert("Select Slot Date to book.");
+        }
+        setBookings([...bookings, {
+            dateTime, data: { hospitalName, county, city, rating, hospitalType }
+        }])
+
+        alert("New Booking Created!");
     }
-
-
+    const displayRightSideOfCard = () => {
+        if(atBookingsPage){
+            return(
+                <div className='resultContent-right resultContent-top'>
+                    <Button text={bookedTime} buttonClass={`longButton blueButton-outlined`}/>
+                    <Button text={bookedDate} buttonClass={`longButton greenButton-outlined`}/>
+                </div>
+            )
+        }
+        return (
+            <div className='resultContent-right'>
+                <span className='available'>Available Today</span>
+                <Button clickFuntion={handleButton} buttonClass={"longButton"} text={"Book FREE Center Visit"}/>
+            </div>
+        )
+    }
+    const slotClick = (date, time) => {
+        console.log({date, time})
+        setDateTime({time, date});
+    }
     return (
 
         <div className='ResultCardWrapper'>
@@ -53,13 +85,10 @@ const ResultCard = props => {
                         </div>
                         <Button buttonClass={"smallButton greenButton"} text={rating} icon={likeIcon} />
                     </div>
-                    <div className='resultContent-right'>
-                        <span className='available'>Available Today</span>
-                        <Button clickFuntion={handleButton} buttonClass={"longButton"} text={"Book FREE Center Visit"}/>
-                    </div>
+                    {displayRightSideOfCard()}
                 </div>
             </div>
-            <Slots slotsON={slotsON}/>
+            <Slots dateTime={dateTime} slotsON={slotsON} slotClick={slotClick}/>
         </div>
     );
 };

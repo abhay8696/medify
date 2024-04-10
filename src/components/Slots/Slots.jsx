@@ -13,7 +13,7 @@ import { printFormattedDates } from '../../functions/functions';
 
 const Slots = props => {
     //props
-    const { slotsON } = props;
+    const { slotsON, slotClick, dateTime } = props;
     //states
     const [value, setValue] = useState(0);
     const [slideDirection, setSlidDirection] = useState("slideLeft")
@@ -62,13 +62,13 @@ const Slots = props => {
                 
             </Tabs>
             <div className='TabPanelWrapper'>
-                <TabPanel value={value} index={0} customClass={slideDirection} />
-                <TabPanel value={value} index={1} customClass={slideDirection} />
-                <TabPanel value={value} index={2} customClass={slideDirection} />
-                <TabPanel value={value} index={3} customClass={slideDirection} />
-                <TabPanel value={value} index={4} customClass={slideDirection} />
-                <TabPanel value={value} index={5} customClass={slideDirection} />
-                <TabPanel value={value} index={6} customClass={slideDirection} />
+                <TabPanel dateTime={dateTime} slotDate={dateArray?.current?.[0]} slotClick={slotClick} value={value} index={0} customClass={slideDirection} />
+                <TabPanel dateTime={dateTime} slotDate={dateArray?.current?.[1]} slotClick={slotClick} value={value} index={1} customClass={slideDirection} />
+                <TabPanel dateTime={dateTime} slotDate={dateArray?.current?.[2]} slotClick={slotClick} value={value} index={2} customClass={slideDirection} />
+                <TabPanel dateTime={dateTime} slotDate={dateArray?.current?.[3]} slotClick={slotClick} value={value} index={3} customClass={slideDirection} />
+                <TabPanel dateTime={dateTime} slotDate={dateArray?.current?.[4]} slotClick={slotClick} value={value} index={4} customClass={slideDirection} />
+                <TabPanel dateTime={dateTime} slotDate={dateArray?.current?.[5]} slotClick={slotClick} value={value} index={5} customClass={slideDirection} />
+                <TabPanel dateTime={dateTime} slotDate={dateArray?.current?.[6]} slotClick={slotClick} value={value} index={6} customClass={slideDirection} />
             </div>
         </div>
     );

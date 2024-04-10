@@ -44,6 +44,9 @@
     justify-content: flex-end;
     gap: 0.5rem;
 }
+.resultContent-top{
+    justify-content: flex-start;
+}
 .resultCardTitle{
     font-size: 20px;
     font-weight: 600;
@@ -109,6 +112,9 @@
     }
     .resultContent-right{
         align-items: flex-end;
+    }
+    .resultContent-top{
+        justify-content: flex-start;
     }
 }
 

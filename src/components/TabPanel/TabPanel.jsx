@@ -9,11 +9,13 @@ const eveningTimings = ["18:00", "18:30", "19:00", "19:30", "20:00"]
 
 const SlotSession = props => {
   //props
-  const { type, timings, suffix } = props;
+  const { type, timings, suffix, slotClick, slotDate, dateTime } = props;
   //functions
   const displayButtons = () => {
     return timings.map(item => {
-      return <Button text={`${item} ${suffix}`} buttonClass={"smallButton blueButton-outline"}/>
+      let buttonColor = "blueButton-outlined";
+      if(dateTime.time == item && slotDate == dateTime.date) buttonColor = "blueButton-filled"
+      return <Button clickFuntion={()=> slotClick(slotDate, item)} text={`${item} ${suffix}`} buttonClass={`smallButton ${buttonColor}`}/>
     })
   }
   return (
@@ -26,7 +28,7 @@ const SlotSession = props => {
 
 const TabPanel = props => {
     //props
-    const { children, value, index, customClass, ...other } = props;
+    const { children, value, index, customClass, slotClick, slotDate, dateTime, ...other } = props;
   
     return (
       <div
@@ -39,11 +41,11 @@ const TabPanel = props => {
       >
         {value === index && (
           <>
-            <SlotSession type="Morining" timings = {morningTimings} suffix="AM"/>
+            <SlotSession dateTime={dateTime} slotDate={slotDate} slotClick={slotClick} type="Morining" timings = {morningTimings} suffix="AM"/>
             <span className='slotDivider'></span>
-            <SlotSession type="Afternoon" timings = {afternoonTimings} suffix="PM"/>
+            <SlotSession dateTime={dateTime} slotDate={slotDate} slotClick={slotClick} type="Afternoon" timings = {afternoonTimings} suffix="PM"/>
             <span className='slotDivider'></span>
-            <SlotSession type="Evening" timings = {eveningTimings} suffix="PM"/>
+            <SlotSession dateTime={dateTime} slotDate={slotDate} slotClick={slotClick} type="Evening" timings = {eveningTimings} suffix="PM"/>
           </>
         )}
       </div>
