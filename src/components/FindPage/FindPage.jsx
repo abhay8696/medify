@@ -5,13 +5,13 @@ import FAQ from '../FAQ/FAQ';
 import AppTop from '../AppTop/AppTop';
 import Navbar from '../Navbar/Navbar';
 
-const FindPage = ({bookings}) => {
+const FindPage = () => {
     return (
         <>
             <AppTop />  
-            <Navbar />
+            <Navbar atFindPage={true} backColor="whiteBack" />
 
-            <SearchResults bookings={bookings}/>
+            <SearchResults />
 
             <FAQ />
         </>

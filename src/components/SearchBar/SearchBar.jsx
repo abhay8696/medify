@@ -7,7 +7,9 @@ import location from "../../assets/location.svg"
 //components
 import Button from '../Button/Button';
 
-const SearchBar = () => {
+const SearchBar = props => {
+    //const
+    const { customClass, atBookingsPage } = props;
     //states
     const [formData, setFormData] = useState({state: "asda", city: ""}); 
     //functions
@@ -19,8 +21,24 @@ const SearchBar = () => {
         
         setFormData({...formData, [name]: value});
     }
-    return (
-        <form onSubmit={handleSubmit} className='SearchBar'>
+    const displayInputs = () => {
+        if(atBookingsPage){
+            return (
+            <span className='inputWrapper'>
+                <img src={location}/>
+                <input 
+                type='text' 
+                value={formData.state} 
+                name='state' 
+                onChange={handleChange}
+                placeholder='state'
+                id='state'
+                />
+            </span>
+        )}
+
+        return( 
+            <>
             <span className='inputWrapper'>
                 <img src={location}/>
                 <input 
@@ -43,6 +61,13 @@ const SearchBar = () => {
                 placeholder='city'
                 />
             </span>
+            </>
+        )
+    }
+
+    return (
+        <form onSubmit={handleSubmit} className={`SearchBar ${customClass}`}>
+            {displayInputs()}
             <Button text="search" icon={searchIcon} buttonClass={"longButton"}/>
         </form>
     );

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 //styles
 import "./ResultCard.css";
 //assets
@@ -7,14 +7,18 @@ import likeIcon from "../../assets/like.svg";
 //components
 import Button from '../Button/Button';
 import Slots from '../Slots/Slots';
+//contexts
+import { BookingsContext } from '../../contexts/AllContexts';
 
 const resultCardHead = "Fortis Hospital Richmond Road";
 const resultLocation = "Banglore, Karnataka";
 const resultCardSubtext = "Smilessence Center for Advanced Dentistry + 1";
 const resultCardOffer = "Consultation fee at clinic";
-const ResultCard = props => {
-    //props
-    const { bookings } = props;
+
+
+const ResultCard = () => {
+    //contexts
+    const [bookings, setBookings] = useContext(BookingsContext)
     //states
     const [dateTime, setDateTime] = useState(undefined);
     const [slotsON, setSlotsON] = useState(false);

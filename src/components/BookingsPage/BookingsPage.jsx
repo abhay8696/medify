@@ -8,7 +8,7 @@ const BookingsPage = () => {
     return (
         <>
             <AppTop />  
-            <Navbar />
+            <Navbar atBookingsPage={true} backColor="whiteBack" />
             
             <Bookings />
         </>

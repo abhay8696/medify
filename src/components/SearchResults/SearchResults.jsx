@@ -9,9 +9,8 @@ import ResultCard from '../ResultCard/ResultCard';
 
 const headline = "15 medical centers available in Alaska";
 const subText = "Book appointments with minimum wait-time & verified doctor details";
-const SearchResults = props => {
-    //props
-    const { bookings } = props;
+const SearchResults = () => {
+    
     return (
         <div className='SearchResults'>
             <div className='commonContainer resultsBody'>
@@ -24,7 +23,7 @@ const SearchResults = props => {
                 </div>
                 <div className='cardAndSensodyne'>
                     <aside className='resultCardsArray'>
-                        <ResultCard bookings={bookings}/>
+                        <ResultCard />
                     </aside>
                     <aside className='sensodyne'></aside>
                 </div>

@@ -19,6 +19,10 @@ nav{
     /* padding: 0 1rem; */
 }
 
+.whiteBack{
+    background-color: var(--color-white);
+}
+
 .logo{
     display: flex;
     align-items: center;
@@ -93,6 +97,8 @@ nav{
     border-radius: 0 0 1rem 1rem;
     overflow: hidden;
     position: relative;
+    /* margin-left: auto;
+    margin-right: auto; */
 }
 
 .navbarBottomPatch{
@@ -113,7 +119,7 @@ nav{
     right: 100%;
     display: none;
     flex-direction: column;
-    z-index: 10
+    z-index: 30
 }
 .menuItem{
     padding: 1rem;
@@ -138,12 +144,80 @@ nav{
     justify-content: center;
 }
 
+.BookingSearch{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+
+.bookingsHeadline{
+    width: 403px;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.BookingSearch .navSearchWrapper{
+    /* flex-basis: 780px; */
+    /* width: 780px; */
+    flex-grow: 1;
+}
+
+
+.BookingSearch form input{
+    /* width: 33.33%; */
+}
+.BookingSearch, .NavSearch{
+    position: absolute;
+    z-index: 25;
+    top: calc(var(--heightOfAppTop) + var(--heightOfMainNav) + 50px);
+}
+.NavSearch{
+    display: flex;
+    background-color: var(--color-white);
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    /* width: var(--appWidth); */
+    border-radius: 1rem;
+    box-shadow: 6px 6px 35px 0px #1028511C;
+}
+
+.navSearchWrapper{
+    background-color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    /* width: var(--appWidth); */
+    border-radius: 1rem;
+    box-shadow: 6px 6px 35px 0px #1028511C;
+}
+
 @media screen and (max-width: 1000px) {
     nav{
         --linksGap: 1rem;
     }   
 }
 
+/* above 1200px */
+@media screen and (min-width: 1200px) { 
+    .BookingSearch, .NavSearch{
+        width: var(--appWidth);
+    }
+}
+
+/* below 1200px */
+@media screen and (max-width: 1200px) {
+    .BookingSearch, .NavSearch{
+        left: 1rem;
+        right: 1rem;
+    }
+}
 @media screen and (max-width: 900px) {
     .navBody{
         display: none;
@@ -153,5 +227,15 @@ nav{
     }
     .menuListWrapper{
         display: flex;
+    }
+    .BookingSearch{
+        flex-direction: column;
+    }
+    .bookingsHeadline{
+        font-size: 32px;
+    }
+    .BookingSearch .navSearchWrapper{
+        align-self: flex-end;
+        margin-top: 2rem;
     }
 }

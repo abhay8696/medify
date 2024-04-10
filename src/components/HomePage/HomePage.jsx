@@ -14,7 +14,7 @@ const HomePage = () => {
     return (
         <>
             <AppTop />  
-            <Navbar />
+            <Navbar atHomePage={true}/>
 
             <Hero />
             <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>

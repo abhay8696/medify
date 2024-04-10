@@ -6,9 +6,11 @@ import sheildIcon from "../../assets/sheildWhite.svg";
 import menuIcon from "../../assets/hamburger.svg";
 //components
 import Button from '../Button/Button';
+import SearchBar from '../SearchBar/SearchBar';
 
 const Navbar = props => {
     //props
+    const { atHomePage, atFindPage, atBookingsPage, backColor } = props;
     //states
     const [menuPoisition, setMenuPosition] = useState("hideMenu");
     //variables
@@ -34,11 +36,41 @@ const Navbar = props => {
         return arr;
     } 
 
+    const NavbarBottom = () => {
+        if(atHomePage) return null;
+
+        return (
+            <div className='navbarBottom'>
+                <span className='navbarBottomPatch'></span>
+            </div>
+        )
+    }
+
+    //sub-components
+    const NavSearch = () => {
+        if(atFindPage) return (
+            <div className={"NavSearch"}>
+                <SearchBar />
+            </div>
+        )
+    }
+
+    const BookingSearch = () => {
+        if(atBookingsPage) return (
+            <div className={"BookingSearch"}>
+                <span className='bookingsHeadline'>My Bookings</span>
+                <div className='navSearchWrapper'>
+                    <SearchBar customClass="" atBookingsPage={true}/>
+                </div>
+            </div>
+        )
+    }
 
     return (
 
-        <nav>
-            <div className='commonContainer'>
+        <>
+        <nav className={`${backColor}`}>
+            <div className="commonContainer">
             <div className='mainNav'>
                 <div className='logo'>
                     <Button icon={sheildIcon} buttonClass="logoButton"/>
@@ -52,14 +84,16 @@ const Navbar = props => {
                     <Button text="my bookings" buttonClass="largeButton "/>
                 </div>
             </div>
-            {/* <div className='navbarBottom'>
-                <span className='navbarBottomPatch'></span>
-            </div> */}
+            
             <div className='menuListWrapper'>
                 {displayMenuList()}
             </div>
             </div>
+            <NavSearch />
+            <BookingSearch />
         </nav>
+        <NavbarBottom />
+        </>
     );
 };
 
