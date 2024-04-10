@@ -8,24 +8,27 @@ import HomePage from './components/HomePage/HomePage'
 import FindPage from './components/FindPage/FindPage'
 import BookingsPage from './components/BookingsPage/BookingsPage'
 //contexts
-import { BookingsContext } from './contexts/AllContexts';
+import { BookingsContext, FoundHospitalsContext } from './contexts/AllContexts';
 
 
 function App() {
-  const [bookings, setBookings] = useState({})
+  const [bookings, setBookings] = useState({});
+  const [foundHospitals, setFoundHospitals] = useState([]);
 
   return (
     <>
       <div className='App'>
         <BookingsContext.Provider value={[bookings, setBookings]}>
-          <BrowserRouter>
-            <Routes>
-              <Route path='/' exact element={<HomePage />} />
-              <Route path='/home' exact element={<HomePage />} />
-              <Route path='/find' exact element={<FindPage />} />
-              <Route path='/bookings' exact element={ <BookingsPage />} />
-            </Routes>
-          </BrowserRouter>
+          <FoundHospitalsContext.Provider value={[foundHospitals, setFoundHospitals]}>
+            <BrowserRouter>
+              <Routes>
+                <Route path='/' exact element={<HomePage />} />
+                <Route path='/home' exact element={<HomePage />} />
+                <Route path='/find' exact element={<FindPage />} />
+                <Route path='/bookings' exact element={ <BookingsPage />} />
+              </Routes>
+            </BrowserRouter>
+          </FoundHospitalsContext.Provider>
         </BookingsContext.Provider>
         <Download />
         <MainFooter />

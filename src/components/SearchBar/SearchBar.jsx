@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import axios, { all } from 'axios';
 //styles
 import "./SearchBar.css"
@@ -9,6 +9,8 @@ import location from "../../assets/location.svg"
 import Button from '../Button/Button';
 import { findLocations } from '../../functions/functions';
 import SearchPop from './SearchPop';
+//components
+import { FoundHospitalsContext } from '../../contexts/AllContexts';
 
 //apis
 const api = "https://meddata-backend.onrender.com";
@@ -17,6 +19,8 @@ const allSates = ["Alabama","Alaska","Arizona","Arkansas","California","Colorado
 const SearchBar = props => {
     //const
     const { customClass, atBookingsPage } = props;
+    //contexts
+    const [foundHospitals, setFoundHospitals] = useContext(FoundHospitalsContext)
     //states
     const [stateName, setStateName] = useState("");
     const [cityName, setCityName] = useState("");
@@ -51,7 +55,7 @@ const SearchBar = props => {
         }
         if(dataType === "hospitals"){
             const hospitals = await axios.get(`${api}/data?state=${stateName}&city=${cityName}`);
-            console.log(hospitals.data)
+            setFoundHospitals(hospitals.data)
         }
     }
     const handleChange = event => {
