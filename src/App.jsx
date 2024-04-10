@@ -14,6 +14,7 @@ import FAQ from './components/FAQ/FAQ'
 import Download from './components/Download/Download'
 import MainFooter from './components/MainFooter/MainFooter'
 import SearchResults from './components/SearchResults/SearchResults'
+import Bookings from './components/Bookings/Bookings'
 
 function App() {
   const [bookings, setBookings] = useState({})
@@ -21,19 +22,28 @@ function App() {
   return (
     <>
       <div className='App'>
-        {/* <AppTop />  
-        <Navbar /> */}
-        {/* <Hero />
+        {/* navbar */}
+        <AppTop />  
+        <Navbar />
+
+        {/* home */}
+        <Hero />
         <CardHolder type="offers" classForMargin={"CardHolder-offers"}/>
         <Specialization />
         <CardHolder type="persons"/>
         <PatientCaring />
         <Blogs />
-        <Families /> */}
+        <Families />
+
+        {/* find */}
         <SearchResults bookings={bookings}/>
-        {/* <FAQ />
+
+        {/* bookings */}
+        <Bookings />
+        {/* footer */}
+        <FAQ />
         <Download />
-        <MainFooter /> */}
+        <MainFooter />
       </div>
     </>
   )

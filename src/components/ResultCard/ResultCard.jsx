@@ -53,7 +53,7 @@ const ResultCard = props => {
                     </div>
                 </div>
             </div>
-            <Slots />
+            <Slots slotsON={slotsON}/>
         </div>
     );
 };

@@ -1,6 +1,7 @@
 
 .ResultCardWrapper{
     background-color: var(--color-white);
+    width: 100%;
     max-width: 95vw;
     border-radius: 1rem;
 }

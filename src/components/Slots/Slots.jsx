@@ -11,7 +11,9 @@ import { printFormattedDates } from '../../functions/functions';
 
 
 
-const Slots = () => {
+const Slots = props => {
+    //props
+    const { slotsON } = props;
     //states
     const [value, setValue] = useState(0);
     const [slideDirection, setSlidDirection] = useState("slideLeft")
@@ -36,39 +38,39 @@ const Slots = () => {
     }
     
     return (
-        <>
-        <Tabs
-            value={value}
-            onChange={handleChange}
-            variant="scrollable"
-            scrollButtons
-            aria-label="visible arrows tabs example"
-            sx={{
-            [`& .${tabsClasses.scrollButtons}`]: {
-                '&.Mui-disabled': { opacity: 0.3 },
-            },
-            }}
-            className='MUI-Tabs'
-        >
-            <Tab label={displayLabel("Today")}  className='slotTabName' />
-            <Tab label={displayLabel("Tomorrow")}  className='slotTabName' />
-            <Tab label={displayLabel(dateArray?.current?.[2])}  className='slotTabName' />
-            <Tab label={displayLabel(dateArray?.current?.[3])}  className='slotTabName' />
-            <Tab label={displayLabel(dateArray?.current?.[4])}  className='slotTabName' />
-            <Tab label={displayLabel(dateArray?.current?.[5])}  className='slotTabName' />
-            <Tab label={displayLabel(dateArray?.current?.[6])}  className='slotTabName' />
-            
-        </Tabs>
-        <div className='TabPanelWrapper'>
-            <TabPanel value={value} index={0} customClass={slideDirection} />
-            <TabPanel value={value} index={1} customClass={slideDirection} />
-            <TabPanel value={value} index={2} customClass={slideDirection} />
-            <TabPanel value={value} index={3} customClass={slideDirection} />
-            <TabPanel value={value} index={4} customClass={slideDirection} />
-            <TabPanel value={value} index={5} customClass={slideDirection} />
-            <TabPanel value={value} index={6} customClass={slideDirection} />
+        <div className={slotsON ? "slotsWrapper tabEnlarge" : "slotsWrapper tabShrink"}>
+            <Tabs
+                value={value}
+                onChange={handleChange}
+                variant="scrollable"
+                scrollButtons
+                aria-label="visible arrows tabs example"
+                sx={{
+                [`& .${tabsClasses.scrollButtons}`]: {
+                    '&.Mui-disabled': { opacity: 0.3 },
+                },
+                }}
+                className='MUI-Tabs'
+            >
+                <Tab label={displayLabel("Today")}  className='slotTabName' />
+                <Tab label={displayLabel("Tomorrow")}  className='slotTabName' />
+                <Tab label={displayLabel(dateArray?.current?.[2])}  className='slotTabName' />
+                <Tab label={displayLabel(dateArray?.current?.[3])}  className='slotTabName' />
+                <Tab label={displayLabel(dateArray?.current?.[4])}  className='slotTabName' />
+                <Tab label={displayLabel(dateArray?.current?.[5])}  className='slotTabName' />
+                <Tab label={displayLabel(dateArray?.current?.[6])}  className='slotTabName' />
+                
+            </Tabs>
+            <div className='TabPanelWrapper'>
+                <TabPanel value={value} index={0} customClass={slideDirection} />
+                <TabPanel value={value} index={1} customClass={slideDirection} />
+                <TabPanel value={value} index={2} customClass={slideDirection} />
+                <TabPanel value={value} index={3} customClass={slideDirection} />
+                <TabPanel value={value} index={4} customClass={slideDirection} />
+                <TabPanel value={value} index={5} customClass={slideDirection} />
+                <TabPanel value={value} index={6} customClass={slideDirection} />
+            </div>
         </div>
-        </>
     );
 }
 
