@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 //components
@@ -19,6 +19,7 @@ function App() {
     stateName: "",
     noSearchYet: true
   });
+  
   return (
     <>
       <div className='App'>

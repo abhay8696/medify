@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 //styles
 import "./Bookings.css";
 //contexts
@@ -30,6 +30,16 @@ const Bookings = () => {
             )
         });
     }
+
+    //get bookings from local
+    useEffect(() => {
+        console.log("initial load...")
+        const localBookings = localStorage.getItem("bookings");
+        if(localBookings){
+            setBookings(JSON.parse(localBookings));
+        }
+    }, []);
+    
     return (
         <div className='SearchResults' >
             <div className='commonContainer resultsBody'>

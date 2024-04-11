@@ -37,9 +37,15 @@ const ResultCard = props => {
         if(!dateTime.date.length || !dateTime.time.length){
             return alert("Select Slot Date to book.");
         }
-        setBookings([...bookings, {
+        
+        let saveBookings = [...bookings, {
             dateTime, data: { hospitalName, county, city, rating, hospitalType }
-        }])
+        }]
+        //save bookings to local
+        localStorage.setItem("bookings", JSON.stringify(saveBookings))
+
+        //save to context
+        setBookings(saveBookings);
 
         alert("New Booking Created!");
     }
