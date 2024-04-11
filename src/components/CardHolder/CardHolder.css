@@ -71,3 +71,46 @@
         margin-top: 30rem;
     }
 } */
+
+
+
+
+.swiper {
+    /* width: 100%; */
+    max-width: 1140px;
+    height: 100%;
+  }
+
+.swiper-wrapper{
+    width: 393.3px !important;
+    height: 199.5px !important;
+}
+.swiper-slide{
+    width: 393.3px !important;
+    height: 199.5px !important;
+}
+.swiper-slide img {
+  /* display: block;
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: cover; */
+}
+
+
+/* screens below 1200px */
+@media screen and (max-width: 600px) {
+    /* .OfferCard{
+        min-width: calc(393.3px / 1.5);
+        height: calc(199.5px / 1.5);
+    } */
+    .swiper-wrapper{
+        width: 100% !important;
+        /* height: calc(199.5px / 1.5) !important; */
+        aspect-ratio: 20.16;
+    }
+    .swiper-slide{
+        width: 100% !important;
+        /* height: calc(199.5px / 1.5) !important; */
+        aspect-ratio: 20.16;
+    }
+}
