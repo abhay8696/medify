@@ -130,6 +130,11 @@ nav{
     cursor: pointer;
     transition: 250ms all;
 }
+
+.menuItem-forBookings{
+    border: none;
+}
+
 .menuRight{
     transform: translateX(100%);
 }
@@ -152,7 +157,7 @@ nav{
 
 
 .bookingsHeadline{
-    width: 403px;
+    /* width: 403px; */
     font-size: 40px;
     font-weight: 700;
     color: var(--color-white);

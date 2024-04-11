@@ -75,7 +75,7 @@ const Navbar = props => {
             <div className={"BookingSearch"}>
                 <span className='bookingsHeadline'>My Bookings</span>
                 <div className='navSearchWrapper'>
-                    <SearchBar customClass="" atBookingsPage={true}/>
+                    <SearchBar atBookingsPage={true}/>
                 </div>
             </div>
         )
