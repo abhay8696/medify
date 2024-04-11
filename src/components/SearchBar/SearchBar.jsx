@@ -7,10 +7,10 @@ import searchIcon from "../../assets/search.svg"
 import location from "../../assets/location.svg"
 //components
 import Button from '../Button/Button';
-import { findLocations, findHospitals } from '../../functions/functions';
+import { findLocations, findBookings } from '../../functions/functions';
 import SearchPop from './SearchPop';
 //components
-import { FoundHospitalsContext } from '../../contexts/AllContexts';
+import { BookingsContext, FoundHospitalsContext } from '../../contexts/AllContexts';
 
 //apis
 const api = "https://meddata-backend.onrender.com";
@@ -20,6 +20,7 @@ const SearchBar = props => {
     //const
     const { customClass, atBookingsPage, atHomePage } = props;
     //contexts
+    const [bookings, setBookings] = useContext(BookingsContext)
     const [foundHospitals, setFoundHospitals] = useContext(FoundHospitalsContext)
     //states
     const [stateName, setStateName] = useState("");
@@ -42,13 +43,17 @@ const SearchBar = props => {
         if(cityName_onChange.current) filterCitiesFunc();
     }, [cityName])
 
+    useEffect(() => {
+        filterBookingsFunc();
+    }, [hospitalName])
+
     //functions
     const handleSubmit = async event => {
         event.preventDefault();
         
-        if(atBookingsPage) return filterHospitalFunc();
+        // if(atBookingsPage) return filterBookingsFunc();
 
-        else getLocationData("hospitals")
+        getLocationData("hospitals")
         
     }
 
@@ -95,11 +100,11 @@ const SearchBar = props => {
         setFilteredCities(foundCities);
     }
 
-    const filterHospitalFunc = () => {
+    const filterBookingsFunc = () => {
         
-        let hospitals = findHospitals(foundHospitals, hospitalName);
-        // setFilteredCities(hospitals);
-        setFilteredHospitals(hospitals)
+        let hospitals = findBookings(bookings, hospitalName);
+        // console.log(hospitals);
+        setFilteredHospitals(hospitals);
     }
 
     const clickStateSuggestions = (nameOfState) => {
@@ -131,6 +136,7 @@ const SearchBar = props => {
                 id='hospitalName'
                 required
                 />
+                <SearchPop atBookingsPage={true} hospitals={filteredHospitals} clickFunction={clickStateSuggestions}/>
             </span>
         )
     }

@@ -54,6 +54,11 @@
     cursor: pointer;
 }
 
+.SearchPopItem-bookings{
+    width: 100%;
+    color: var(--primary);
+}
+
 .disableCityInput{
     opacity: 0.5;
 }

@@ -56,12 +56,13 @@ export const findLocations = (locationArray, str) => {
   return arr;
 }
 
-export const findHospitals = (foundHospitals, str) => {
+export const findBookings = (bookings, str) => {
   let arr = [];
+  // console.log(bookings)
 
-  foundHospitals.hospitals.forEach(item => {
-    if(findSubString(item["Hospital Name"], str)) arr.push(item);
+  bookings.forEach(item => {
+    if(findSubString(item.data.hospitalName, str)) arr.push(item);
   })
-
+  
   return arr;
 }
