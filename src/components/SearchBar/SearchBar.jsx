@@ -7,7 +7,7 @@ import searchIcon from "../../assets/search.svg"
 import location from "../../assets/location.svg"
 //components
 import Button from '../Button/Button';
-import { findLocations } from '../../functions/functions';
+import { findLocations, findHospitals } from '../../functions/functions';
 import SearchPop from './SearchPop';
 //components
 import { FoundHospitalsContext } from '../../contexts/AllContexts';
@@ -24,10 +24,12 @@ const SearchBar = props => {
     //states
     const [stateName, setStateName] = useState("");
     const [cityName, setCityName] = useState("");
+    const [hospitalName, setHospitalName] = useState("");
     const [filteredStates, setFilteredStates] = useState([]);
     const [allCities, setAllCities] = useState([]);
     const [filteredCities, setFilteredCities] = useState([]);
     const [disableCityInput, setDisableCityInput] = useState(undefined);
+    const [filteredHospitals, setFilteredHospitals] = useState([]);
     //refs
     const stateName_onChange = useRef(false);
     const cityName_onChange = useRef(false);
@@ -44,7 +46,9 @@ const SearchBar = props => {
     const handleSubmit = async event => {
         event.preventDefault();
         
-        getLocationData("hospitals")
+        if(atBookingsPage) return filterHospitalFunc();
+
+        else getLocationData("hospitals")
         
     }
 
@@ -74,6 +78,10 @@ const SearchBar = props => {
             cityName_onChange.current = true;
             setCityName(value)
         }
+
+        if(name === "hospitalName"){
+            setHospitalName(value);
+        }
     }
     const filterStatesFunc = () => {
         
@@ -85,6 +93,13 @@ const SearchBar = props => {
         
         let foundCities = findLocations(allCities, cityName);
         setFilteredCities(foundCities);
+    }
+
+    const filterHospitalFunc = () => {
+        
+        let hospitals = findHospitals(foundHospitals, hospitalName);
+        // setFilteredCities(hospitals);
+        setFilteredHospitals(hospitals)
     }
 
     const clickStateSuggestions = (nameOfState) => {
@@ -109,11 +124,11 @@ const SearchBar = props => {
                 <img src={location}/>
                 <input 
                 type='text' 
-                value={stateName} 
-                name='state' 
-                onChange={filterStatesFunc}
-                placeholder='state'
-                id='state'
+                value={hospitalName} 
+                name='hospitalName' 
+                onChange={handleChange}
+                placeholder='Search By Hospital'
+                id='hospitalName'
                 required
                 />
             </span>
