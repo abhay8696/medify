@@ -47,15 +47,15 @@ const ResultCard = props => {
         if(atBookingsPage){
             return(
                 <div className='resultContent-right resultContent-top'>
-                    <Button text={bookedTime} buttonClass={`longButton blueButton-outlined`}/>
-                    <Button text={bookedDate} buttonClass={`longButton greenButton-outlined`}/>
+                    <Button text={bookedTime} buttonClass={`smallButton blueButton-outlined`}/>
+                    <Button text={bookedDate} buttonClass={`smallButton greenButton-outlined`}/>
                 </div>
             )
         }
         return (
             <div className='resultContent-right'>
                 <span className='available'>Available Today</span>
-                <Button clickFuntion={handleButton} buttonClass={"longButton"} text={"Book FREE Center Visit"}/>
+                <Button clickFuntion={handleButton} buttonClass={"bookingButton longButton"} text={"Book FREE Center Visit"}/>
             </div>
         )
     }
@@ -83,7 +83,7 @@ const ResultCard = props => {
                             <span className='strikeThrough'>₹500</span>
                             <span>{resultCardOffer}</span>
                         </div>
-                        <Button buttonClass={"smallButton greenButton"} text={rating} icon={likeIcon} />
+                        <Button buttonClass={"smallButton greenButton rating"} text={rating} icon={likeIcon} />
                     </div>
                     {displayRightSideOfCard()}
                 </div>
