@@ -73,10 +73,17 @@
 
 @media screen and (max-width: 900px){
     .cardAndSensodyne{
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }
+/* resultsBody */
 
+
+@media screen and (max-width: 650px){
+    .resultsBody{
+        padding-top: 10rem;
+    }
+}
 
 @media screen and (max-width: 600px){
     .resultsHead h5{
