@@ -77,7 +77,7 @@ const CardHolder = ({type, headlibe, classForMargin}) => {
             </div>
             {/* <div className='radioButtonsWrapper'>
                 <RadioButtons />
-            </div> */}
+            </div> */} 
         </div>
     );
 };
