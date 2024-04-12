@@ -32,6 +32,7 @@ const SearchBar = props => {
     const [filteredCities, setFilteredCities] = useState([]);
     const [disableCityInput, setDisableCityInput] = useState(undefined);
     const [filteredHospitals, setFilteredHospitals] = useState([]);
+    const [fetchingHospitals, setFetchingHospitals] = useState(false)
     //refs
     const stateName_onChange = useRef(false);
     const cityName_onChange = useRef(false);
@@ -68,8 +69,10 @@ const SearchBar = props => {
             setDisableCityInput(undefined);
         }
         if(dataType === "hospitals"){
+            setFetchingHospitals(true);
             const hospitals = await axios.get(`${api}/data?state=${stateName}&city=${cityName}`);
-            setFoundHospitals({hospitals: hospitals.data, cityName, stateName})
+            setFoundHospitals({hospitals: hospitals.data, cityName, stateName});
+            setFetchingHospitals(false);
         }
     }
     const handleChange = event => {
@@ -180,7 +183,14 @@ const SearchBar = props => {
     return (
         <form onSubmit={handleSubmit} className={`SearchBar ${customClass}`}>
             {displayInputs()}
-            <Button formSubmit="true" text="search" icon={searchIcon} buttonClass={"longButton"}/>
+
+            <Button 
+            formSubmit="true" 
+            text={fetchingHospitals ? "Fetching..." : "search" }
+            icon={fetchingHospitals ? loadingIcon : searchIcon} 
+            buttonClass={"longButton"}
+            rotateIcon={fetchingHospitals ? true : false}
+            />
         </form>
     );
 };
