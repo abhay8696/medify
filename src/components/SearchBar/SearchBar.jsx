@@ -5,6 +5,7 @@ import "./SearchBar.css"
 //assetes
 import searchIcon from "../../assets/search.svg"
 import location from "../../assets/location.svg"
+import loadingIcon from "../../assets/loading.svg";
 //components
 import Button from '../Button/Button';
 import { findLocations, findBookings } from '../../functions/functions';
@@ -34,6 +35,7 @@ const SearchBar = props => {
     //refs
     const stateName_onChange = useRef(false);
     const cityName_onChange = useRef(false);
+    const fetchingCities = useRef(false);
     //side effects
     useEffect(()=> {
         if(stateName_onChange.current) filterStatesFunc();
@@ -59,8 +61,10 @@ const SearchBar = props => {
 
     const getLocationData = async (dataType, location) => {
         if(dataType == "cities"){
+            fetchingCities.current = true;
             const cities = await axios.get(`${api}/cities/${location}`);
             setAllCities(cities.data);
+            fetchingCities.current = false;
             setDisableCityInput(undefined);
         }
         if(dataType === "hospitals"){
@@ -157,13 +161,13 @@ const SearchBar = props => {
             </span>
             
             <span className={`inputWrapper ${disableCityInput}`}>
-                <img src={location}/>
+                <img src={fetchingCities.current ? loadingIcon : location} className={fetchingCities.current ? 'rotateLoad' : null}/>
                 <input 
                 type='text' 
                 value={cityName} 
                 name='city' 
                 onChange={handleChange}
-                placeholder='city'
+                placeholder={fetchingCities.current ? "Fetching cities..." :'city'}
                 required
                 disabled={displayInputs ? false : true}
                 />
