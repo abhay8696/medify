@@ -40,7 +40,7 @@ const CardHolder = ({type, headlibe, classForMargin}) => {
                 <RadioButtons />
             </div>
         </div>
-    );
+    ); 
 };
 
 export default CardHolder;
