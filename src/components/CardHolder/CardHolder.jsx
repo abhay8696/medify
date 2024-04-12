@@ -23,15 +23,26 @@ const CardHolder = ({type, headlibe, classForMargin}) => {
         if(type === "offers"){
             return (
                 <>
-                    <OfferCard cardNo={1}/>
+                    {/* <OfferCard cardNo={1}/>
                     <OfferCard cardNo={2}/>
-                    <OfferCard cardNo={1}/>
+                    <OfferCard cardNo={1}/> */}
+                    <SwiperSlide><OfferCard cardNo={1}/></SwiperSlide>
+                    <SwiperSlide><OfferCard cardNo={2}/></SwiperSlide>
+                    <SwiperSlide><OfferCard cardNo={1}/></SwiperSlide>
+                    <SwiperSlide><OfferCard cardNo={2}/></SwiperSlide>
+                    <SwiperSlide><OfferCard cardNo={1}/></SwiperSlide>
+                    <SwiperSlide><OfferCard cardNo={2}/></SwiperSlide>
+                    <SwiperSlide><OfferCard cardNo={1}/></SwiperSlide>
                 </>
             )
         }else{return (
             doctorsData.map((item, idx) => {
                 const {name, specialization, image} = item
-                return <PersonCard cardNo={idx+1} key={`${name}Image`} name={name} specialization={specialization} image={image} />
+                return (
+                    <SwiperSlide className='doctorsSlide'>
+                        <PersonCard cardNo={idx+1} key={`${name}Image`} name={name} specialization={specialization} image={image} />
+                    </SwiperSlide>
+                )
             })
         )
         }
@@ -41,27 +52,27 @@ const CardHolder = ({type, headlibe, classForMargin}) => {
         <div className={`CardHolder ${classForMargin}`}>
             {type === "persons" ? <CommonHeader text={"Our Medical Specialist"} /> : null}
             <div className='cardHolderWrapper commonContainer'>
+                        {/* {displayCards()} */}
                 {/* <div class="swiper">
                     <div class="swiper-wrapper">
-                        {displayCards()}
                     </div>
                 </div> */}
                 <Swiper
-                    spaceBetween={30}
+                    spaceBetween={10}
                     centeredSlides={true}
                     autoplay={{
                     delay: 2500,
                     disableOnInteraction: false,
                     }}
-                    pagination={{
-                    clickable: true,
-                    }}
-                    modules={[Autoplay, Pagination, Navigation]}
-                    // className="mySwiper"
+                    width={type === "offers" ? 393 : null}
+                    // pagination={{
+                    // clickable: true,
+                    // }}
+                    loop={true}
+                    modules={[Autoplay]}
+                    className="mySwiper"
                 >
-                    <SwiperSlide><OfferCard cardNo={1}/></SwiperSlide>
-                    <SwiperSlide><OfferCard cardNo={2}/></SwiperSlide>
-                    <SwiperSlide><OfferCard cardNo={1}/></SwiperSlide>
+                    {displayCards()}
                 </Swiper>
             </div>
             {/* <div className='radioButtonsWrapper'>
