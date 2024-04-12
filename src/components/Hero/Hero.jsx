@@ -7,6 +7,7 @@ import blueSheildIcon from "../../assets/sheildBlue.svg";
 import Button from '../Button/Button';
 import SearchComp from '../SearchComp/SearchComp';
 import CommonSubText from '../CommonSubText/CommonSubText';
+import { Link } from 'react-router-dom';
 
 const tagLine = "Skip the travel! Find Online";
 const subText = "Connect instantly with a 24x7 specialist or choose to video visit a particular doctor.";
@@ -21,7 +22,7 @@ const Hero = () => {
                     </h1>
                     <p className='heroSubtext'>{subText}</p>
                     {/* <CommonSubText text={subText} /> */}
-                    <Button text="find centers" buttonClass="largeButton heroButton"/>
+                    <Link to="/find"><Button text="find centers" buttonClass="largeButton heroButton"/></Link>
                 </div>
                 <div className='heroImgDiv'>
                     <Button text="Regular Checkup" buttonClass="largeButton whiteButton heroImgButton" icon={blueSheildIcon} />

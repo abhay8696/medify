@@ -1,10 +1,10 @@
-# Crio Code-A-Thon Project: MEDIFY - Medical Center Slot Booking Platform
+# MEDIFY - Medical Center Slot Booking Platform
 
 ![Screenshot of App](./src/assets/Screenshot1.png)
 
 ## The App
 
-React-based web application that allows users to find medical centers in a specific state and city across the USA and book appointments.
+**Crio Code-A-Thon Project:** React-based web application that allows users to find medical centers in a specific state and city across the USA and book appointments.
 
 
 ## Features:
@@ -31,10 +31,11 @@ React-based web application that allows users to find medical centers in a speci
 `REACT JS`
 `REACT ROUTER DOM`
 
-## NPM library used to built charts
+## NPM library used to
 
 `SWIPER`
 `MATERIAL UI`
+`Axios`
 
 
 - <a href="https://medify-azure.vercel.app/" target="_blank">Click here for demo</a>
